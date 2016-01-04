@@ -93,6 +93,17 @@ sudo dpkg -i cuda-repo-ubuntu1404_7.5-18_amd64.deb
 md5sum cuda-repo-ubuntu1404-7-5-local_7.5-18_amd64.deb
 # install
 sudo dpkg -i cuda-repo-ubuntu1404-7-5-local_7.5-18_amd64.deb
+############ RUN file
+sudo touch /etc/modprobe.d/blacklist-nouveau.conf
+sudo gedit /etc/modprobe.d/blacklist-nouveau.conf
+.... add below contents ..................
+blacklist nouveau
+options nouveau modeset=0
+...............................................
+sudo update-initramfs -u
+# (md5sum: 4b3bcecf0dfc35928a0898793cf3e4c6)
+md5sum cuda_7.5.18_linux.run
+sudo sh cuda_7.5.18_linux.run
 ######################################################################
 sudo apt-get update
 sudo apt-get install cuda
