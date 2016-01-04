@@ -34,6 +34,14 @@ git clone https://github.com/praveenneuron/private-files.git
 ```sh
 sudo apt-get --purge remove <package_name>
 ```
+
+#### More configs if issue
+```sh
+sudo nano /etc/init/gpu-manager.conf #comment everything in this file
+OR/AND
+sudo nano /etc/modprobe.d/blacklist.conf # add line ... blacklist nouveau
+```
+
 #### Basic softs
 ```sh
 sudo apt-get install build-essential
@@ -110,12 +118,6 @@ cd $CUDA_SAMPLES
 ## Something more if not working
 ```text
 
-## 3
-# reboot .... if you get black screen try this
-sudo service lightdm stop
-sudo nano /etc/init/gpu-manager.conf #comment everything in this file
-sudo nvidia-xconfig
-sudo service lightdm start
 
 # some more softs
 sudo apt-get install nvidia-visual-profiler
