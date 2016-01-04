@@ -78,21 +78,30 @@ sudo apt-get update
 
 ## Installing Drivers and CUDA
 
-#### Download deb file for CUDA 7.5
+#### Three ways for CUDA 7.5
 ```sh
 # checksums
 cd ~/Downloads
-######################################################################
+```
+```sh
 ############ NON-LOCAL DEB
 # (md5sum: e1f61e1e62fb354ab7a662f82b1f4b0d)
 md5sum cuda-repo-ubuntu1404_7.5-18_amd64.deb 
 # install
 sudo dpkg -i cuda-repo-ubuntu1404_7.5-18_amd64.deb
+sudo apt-get update
+sudo apt-get install cuda
+```
+```sh
 ############ LOCAL DEB
 # (md5sum: 5cf65b8139d70270d9234d5ff4d697c7)
 md5sum cuda-repo-ubuntu1404-7-5-local_7.5-18_amd64.deb
 # install
 sudo dpkg -i cuda-repo-ubuntu1404-7-5-local_7.5-18_amd64.deb
+sudo apt-get update
+sudo apt-get install cuda
+```
+```sh
 ############ RUN file
 sudo touch /etc/modprobe.d/blacklist-nouveau.conf
 sudo gedit /etc/modprobe.d/blacklist-nouveau.conf
@@ -104,9 +113,6 @@ sudo update-initramfs -u
 # (md5sum: 4b3bcecf0dfc35928a0898793cf3e4c6)
 md5sum cuda_7.5.18_linux.run
 sudo sh cuda_7.5.18_linux.run --no-opengl-libs
-######################################################################
-sudo apt-get update
-sudo apt-get install cuda
 ```
 
 #### Update environment
