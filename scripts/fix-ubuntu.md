@@ -82,12 +82,13 @@ sudo apt-get update
 ```sh
 # checksums
 cd ~/Downloads
+######################################################################
 ############ NON-LOCAL DEB
 # (md5sum: e1f61e1e62fb354ab7a662f82b1f4b0d)
 md5sum cuda-repo-ubuntu1404_7.5-18_amd64.deb 
 # install
 sudo dpkg -i cuda-repo-ubuntu1404_7.5-18_amd64.deb
-############ NON-LOCAL DEB
+############ LOCAL DEB
 # (md5sum: 5cf65b8139d70270d9234d5ff4d697c7)
 md5sum cuda-repo-ubuntu1404-7-5-local_7.5-18_amd64.deb
 # install
