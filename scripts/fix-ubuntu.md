@@ -102,7 +102,7 @@ sudo apt-get update
 sudo apt-get install cuda
 ```
 ```sh
-############ RUN file
+############ RUN file ..... this worked for me <<<<<<<<<<<<<<<<<<<<<<<<<<
 sudo touch /etc/modprobe.d/blacklist-nouveau.conf
 sudo gedit /etc/modprobe.d/blacklist-nouveau.conf
 .... add below contents ..................
@@ -125,6 +125,7 @@ export CUDA_SAMPLES=~/NVIDIA_CUDA-7.5_Samples/bin/x86_64/linux/release/
 # ...................... Also add to global ldconfig ....
 sudo /bin/bash -c 'echo "/usr/local/cuda-7.5/lib64" > /etc/ld.so.conf.d/nvidia.conf'
 sudo gedit /etc/ld.so.conf.d/nvidia.conf # add /usr/local/cuda-7.0/lib64 to file
+sudo gedit /etc/ld.so.conf # add this line ... /usr/local/cuda-7.5/lib64
 sudo ldconfig
 # check Drivers
 cat /proc/driver/nvidia/version
