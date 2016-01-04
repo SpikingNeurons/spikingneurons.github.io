@@ -88,6 +88,9 @@ cd ~/Downloads
 # (md5sum: e1f61e1e62fb354ab7a662f82b1f4b0d)
 md5sum cuda-repo-ubuntu1404_7.5-18_amd64.deb 
 # install
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get clean
 sudo dpkg -i cuda-repo-ubuntu1404_7.5-18_amd64.deb
 sudo apt-get update
 sudo apt-get install cuda
@@ -97,12 +100,15 @@ sudo apt-get install cuda
 # (md5sum: 5cf65b8139d70270d9234d5ff4d697c7)
 md5sum cuda-repo-ubuntu1404-7-5-local_7.5-18_amd64.deb
 # install
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get clean
 sudo dpkg -i cuda-repo-ubuntu1404-7-5-local_7.5-18_amd64.deb
 sudo apt-get update
 sudo apt-get install cuda
 ```
 ```sh
-############ RUN file ..... this worked for me <<<<<<<<<<<<<<<<<<<<<<<<<<
+############ RUN file ..... <<<<<<<<<<<<<<<<<<<<<<<<<<
 sudo touch /etc/modprobe.d/blacklist-nouveau.conf
 sudo gedit /etc/modprobe.d/blacklist-nouveau.conf
 .... add below contents ..................
@@ -113,6 +119,9 @@ sudo update-initramfs -u
 # (md5sum: 4b3bcecf0dfc35928a0898793cf3e4c6)
 md5sum cuda_7.5.18_linux.run
 sudo sh cuda_7.5.18_linux.run --no-opengl-libs
+----------------uninstall----------------------
+ sudo /usr/local/cuda-7.5/bin/uninstall_cuda_7.5.pl # toolkit
+ sudo /usr/bin/nvidia-uninstall # driver
 ```
 
 #### Update environment
