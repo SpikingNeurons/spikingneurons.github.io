@@ -30,6 +30,10 @@ git clone https://github.com/praveenneuron/private-files.git
 ```
 
 ## Making the base ready
+
+#### Some tricks
++ Hold shift during boot to get in recovery mode and edit files
+
 #### Purge
 ```sh
 sudo apt-get --purge remove <package_name>
@@ -40,6 +44,16 @@ sudo apt-get --purge remove <package_name>
 sudo nano /etc/init/gpu-manager.conf #comment everything in this file
 OR/AND
 sudo nano /etc/modprobe.d/blacklist.conf # add line ... blacklist nouveau
+```
+
+#### Force text mode for Ubuntu
+```sh
+sudo nano /etc/default/grub
+Replace
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
+with
+GRUB_CMDLINE_LINUX_DEFAULT="text"
+sudo update-grub
 ```
 
 #### Basic softs
@@ -60,15 +74,6 @@ sudo apt-get install mesa-utils
 sudo apt-get install freeglut3-dev
 sudo apt-get autoremove
 sudo apt-get update
-```
-#### Force text mode for Ubuntu
-```sh
-sudo nano /etc/default/grub
-Replace
-GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
-with
-GRUB_CMDLINE_LINUX_DEFAULT="text"
-sudo update-grub
 ```
 
 ## Installing Drivers and CUDA
