@@ -117,7 +117,7 @@ git clone https://github.com/praveenneuron/praveenneuron.github.io.git
 
 #### Three ways for CUDA 7.5
 ```sh
-# checksums
+sudo reboot
 cd ~/Downloads/nvidia
 ```
 ```sh
@@ -159,16 +159,6 @@ sudo apt-get install cuda
 ```
 
 
-#### Update environment
-```sh
-
-# check Drivers
-cat /proc/driver/nvidia/version
-```
-```sh
-sudo nvidia-xconfig
-```
-
 #### Install samples
 ```sh
 #post
@@ -184,6 +174,19 @@ cd $CUDA_SAMPLES
 ./bandwidthTest
 ./fluidsGL
 ```
+
+# **Later Ignore below if above works**
+
+#### Update environment
+```sh
+
+# check Drivers
+cat /proc/driver/nvidia/version
+```
+```sh
+sudo nvidia-xconfig
+```
+
 
 ## Something more if not working
 
