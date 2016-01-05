@@ -176,6 +176,8 @@ cd $CUDA_SAMPLES
 ./fluidsGL
 ```
 
+** Things work till here. Only OpenGL demos crash. Something to do with graphics card switching .... need to experiment more **
+
 # **Later Ignore below if above works**
 
 #### Update environment
