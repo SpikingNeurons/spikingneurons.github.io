@@ -114,6 +114,7 @@ git clone https://github.com/praveenneuron/praveenneuron.github.io.git
 ```
 
 ## Installing Drivers and CUDA
++ Make sure you run system update tool of ubuntu
 
 #### Three ways for CUDA 7.5
 ```sh
