@@ -142,6 +142,9 @@ sudo ldconfig
 # check Drivers
 cat /proc/driver/nvidia/version
 ```
+```sh
+sudo nvidia-xconfig
+```
 
 #### Install samples
 ```sh
