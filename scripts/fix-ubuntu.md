@@ -50,8 +50,10 @@ sudo reboot
 sudo service lightdm start
 ```
 
-## Get internet and github
-+ Shortcuts
+## Configure things in advance
++ By now the ubuntu should load properly
++ edit `.bashrc`
+
 ```sh
 gedit ~/.bashrc
 # add these lines
@@ -62,6 +64,21 @@ alias uuu='. ~/.bashrc'
 # ...........................................
 . ~/.bashrc
 ```
+
+```sh
+gedit ~/.bashrc
+# ............add these lines to .bashrc...........................
+export PATH=$PATH:/usr/local/cuda-7.5/bin
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-7.5/lib64
+export CUDA_SAMPLES=~/NVIDIA_CUDA-7.5_Samples/bin/x86_64/linux/release/
+# ...................... Also add to global ldconfig ....
+sudo /bin/bash -c 'echo "/usr/local/cuda-7.5/lib64" > /etc/ld.so.conf.d/nvidia.conf'
+sudo gedit /etc/ld.so.conf.d/nvidia.conf # add /usr/local/cuda-7.5/lib64 to file
+sudo ldconfig
+```
+
+## Get internet and github
+
 ## Making the base ready
 
 #### Some tricks
@@ -155,16 +172,7 @@ sudo apt-get install cuda
 
 #### Update environment
 ```sh
-gedit ~/.bashrc
-# ............add these lines to .bashrc...........................
-export PATH=$PATH:/usr/local/cuda-7.5/bin
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-7.5/lib64
-export CUDA_SAMPLES=~/NVIDIA_CUDA-7.5_Samples/bin/x86_64/linux/release/
-# ...................... Also add to global ldconfig ....
-sudo /bin/bash -c 'echo "/usr/local/cuda-7.5/lib64" > /etc/ld.so.conf.d/nvidia.conf'
-sudo gedit /etc/ld.so.conf.d/nvidia.conf # add /usr/local/cuda-7.0/lib64 to file
-sudo gedit /etc/ld.so.conf # add this line ... /usr/local/cuda-7.5/lib64
-sudo ldconfig
+
 # check Drivers
 cat /proc/driver/nvidia/version
 ```
