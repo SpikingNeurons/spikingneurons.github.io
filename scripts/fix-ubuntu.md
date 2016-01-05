@@ -1,5 +1,55 @@
 # Fix Ubuntu
 
+## Install Ubuntu
++ Remember to connect to internet while installation
++ OR (may be did not try) `iwconfig wlan0 essid name key password`
+
+## Recovery root mode
++ System will crash because of two GPUs
++ Press `SHIFT` button while booting and enter recovery mode
+
+#### Some purge
+```sh
+sudo apt-get --purge remove nvidia*
+sudo apt-get --purge remove cuda*
+```
+#### Force text mode for Ubuntu
+```sh
+sudo nano /etc/default/grub
+Replace
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
+with
+GRUB_CMDLINE_LINUX_DEFAULT="text"
+sudo update-grub
+```
+
+#### Blacklist nouveau
++ blacklist conf
+```sh
+sudo touch /etc/modprobe.d/blacklist-nouveau.conf
+sudo gedit /etc/modprobe.d/blacklist-nouveau.conf
+.... add below contents .......................
+blacklist nouveau
+options nouveau modeset=0
+...............................................
+sudo update-initramfs -u
+```
++ comment all lines in gpu-manager.cong
+```sh
+sudo nano /etc/init/gpu-manager.conf
+sudo update-initramfs -u
+```
+
+#### Reboot and Update
+```sh
+sudo reboot
+sudo apt-get update
+sudo apt-get upgrade
+sudo reboot
+........ then
+sudo service lightdm start
+```
+
 ## Get internet and github
 + Shortcuts
 ```sh
@@ -12,11 +62,6 @@ alias uuu='. ~/.bashrc'
 # ...........................................
 . ~/.bashrc
 ```
-+ wlan -- getting internet
-```sh
-iwconfig wlan0 essid name key password
-```
-
 ## Making the base ready
 
 #### Some tricks
@@ -24,22 +69,9 @@ iwconfig wlan0 essid name key password
 + `sudo service lightdm stop` and `sudo killall Xorg`
 + `nvidia-smi --help`
 
-#### Purge
-```sh
-sudo apt-get --purge remove nvidia*
-sudo apt-get --purge remove cuda*
-```
 
 
-#### Force text mode for Ubuntu
-```sh
-sudo nano /etc/default/grub
-Replace
-GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
-with
-GRUB_CMDLINE_LINUX_DEFAULT="text"
-sudo update-grub
-```
+
 
 #### Basic softs
 ```sh
@@ -84,13 +116,7 @@ cd ~/Downloads/nvidia
 ```
 ```sh
 ############ RUN file ..... <<<<<<<<<<<<<<<<<<<<<<<<<<
-sudo touch /etc/modprobe.d/blacklist-nouveau.conf
-sudo gedit /etc/modprobe.d/blacklist-nouveau.conf
-.... add below contents ..................
-blacklist nouveau
-options nouveau modeset=0
-...............................................
-sudo update-initramfs -u
+
 # (md5sum: 4b3bcecf0dfc35928a0898793cf3e4c6)
 md5sum cuda_7.5.18_linux.run
 sudo service lightdm stop
