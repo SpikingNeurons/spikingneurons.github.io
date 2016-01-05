@@ -51,6 +51,7 @@ sudo service lightdm start
 ```
 
 ## Configure things in advance
+#### Environment
 + By now the ubuntu should load properly
 + edit `.bashrc`
 
@@ -74,21 +75,9 @@ export CUDA_SAMPLES=~/NVIDIA_CUDA-7.5_Samples/bin/x86_64/linux/release/
 # ...................... Also add to global ldconfig ....
 sudo /bin/bash -c 'echo "/usr/local/cuda-7.5/lib64" > /etc/ld.so.conf.d/nvidia.conf'
 sudo gedit /etc/ld.so.conf.d/nvidia.conf # add /usr/local/cuda-7.5/lib64 to file
+. ~/.bashrc
 sudo ldconfig
 ```
-
-## Get internet and github
-
-## Making the base ready
-
-#### Some tricks
-+ Hold shift during boot to get in recovery mode and edit files
-+ `sudo service lightdm stop` and `sudo killall Xorg`
-+ `nvidia-smi --help`
-
-
-
-
 
 #### Basic softs
 ```sh
@@ -110,7 +99,7 @@ sudo apt-get autoremove
 sudo apt-get update
 ```
 
-+ github
+#### github
 ```sh
 # Set git to use the credential memory cache
 git config --global credential.helper cache
@@ -197,6 +186,16 @@ cd $CUDA_SAMPLES
 ```
 
 ## Something more if not working
+
+
+#### Some tricks
++ Hold shift during boot to get in recovery mode and edit files
++ `sudo service lightdm stop` and `sudo killall Xorg`
++ `nvidia-smi --help`
+
+
+
+
 ```text
 
 
