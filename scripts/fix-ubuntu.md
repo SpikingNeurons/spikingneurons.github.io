@@ -33,6 +33,7 @@ git clone https://github.com/praveenneuron/private-files.git
 
 #### Some tricks
 + Hold shift during boot to get in recovery mode and edit files
++ `sudo service lightdm stop` and `sudo killall Xorg`
 
 #### Purge
 ```sh
@@ -118,6 +119,8 @@ options nouveau modeset=0
 sudo update-initramfs -u
 # (md5sum: 4b3bcecf0dfc35928a0898793cf3e4c6)
 md5sum cuda_7.5.18_linux.run
+sudo service lightdm stop
+sudo killall Xorg
 sudo sh cuda_7.5.18_linux.run --no-opengl-libs
 ----------------uninstall----------------------
  sudo /usr/local/cuda-7.5/bin/uninstall_cuda_7.5.pl # toolkit
