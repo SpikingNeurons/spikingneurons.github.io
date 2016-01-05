@@ -16,36 +16,20 @@ alias uuu='. ~/.bashrc'
 ```sh
 iwconfig wlan0 essid name key password
 ```
-+ github
-```sh
-# Set git to use the credential memory cache
-git config --global credential.helper cache
-# Set the cache to timeout after 1 hour (setting is in seconds)
-git config --global credential.helper 'cache --timeout=3600'
-#
-git config --global push.default simple
-# Get back the saving scripts
-cd ~
-git clone https://github.com/praveenneuron/private-files.git
-```
 
 ## Making the base ready
 
 #### Some tricks
 + Hold shift during boot to get in recovery mode and edit files
 + `sudo service lightdm stop` and `sudo killall Xorg`
++ `nvidia-smi --help`
 
 #### Purge
 ```sh
-sudo apt-get --purge remove <package_name>
+sudo apt-get --purge remove nvidia*
+sudo apt-get --purge remove cuda*
 ```
 
-#### More configs if issue
-```sh
-sudo nano /etc/init/gpu-manager.conf #comment everything in this file
-OR/AND
-sudo nano /etc/modprobe.d/blacklist.conf # add line ... blacklist nouveau
-```
 
 #### Force text mode for Ubuntu
 ```sh
@@ -77,12 +61,45 @@ sudo apt-get autoremove
 sudo apt-get update
 ```
 
++ github
+```sh
+# Set git to use the credential memory cache
+git config --global credential.helper cache
+# Set the cache to timeout after 1 hour (setting is in seconds)
+git config --global credential.helper 'cache --timeout=3600'
+#
+git config --global push.default simple
+# Get back the saving scripts
+cd ~
+git clone https://github.com/praveenneuron/private-files.git
+git clone https://github.com/praveenneuron/praveenneuron.github.io.git
+```
+
 ## Installing Drivers and CUDA
 
 #### Three ways for CUDA 7.5
 ```sh
 # checksums
-cd ~/Downloads
+cd ~/Downloads/nvidia
+```
+```sh
+############ RUN file ..... <<<<<<<<<<<<<<<<<<<<<<<<<<
+sudo touch /etc/modprobe.d/blacklist-nouveau.conf
+sudo gedit /etc/modprobe.d/blacklist-nouveau.conf
+.... add below contents ..................
+blacklist nouveau
+options nouveau modeset=0
+...............................................
+sudo update-initramfs -u
+# (md5sum: 4b3bcecf0dfc35928a0898793cf3e4c6)
+md5sum cuda_7.5.18_linux.run
+sudo service lightdm stop
+sudo killall Xorg
+# install all including libraries (exclude opengl)
+sudo sh cuda_7.5.18_linux.run --no-opengl-libs
+----------------uninstall----------------------
+ sudo /usr/local/cuda-7.5/bin/uninstall_cuda_7.5.pl # toolkit
+ sudo /usr/bin/nvidia-uninstall # driver
 ```
 ```sh
 ############ NON-LOCAL DEB
@@ -108,24 +125,7 @@ sudo dpkg -i cuda-repo-ubuntu1404-7-5-local_7.5-18_amd64.deb
 sudo apt-get update
 sudo apt-get install cuda
 ```
-```sh
-############ RUN file ..... <<<<<<<<<<<<<<<<<<<<<<<<<<
-sudo touch /etc/modprobe.d/blacklist-nouveau.conf
-sudo gedit /etc/modprobe.d/blacklist-nouveau.conf
-.... add below contents ..................
-blacklist nouveau
-options nouveau modeset=0
-...............................................
-sudo update-initramfs -u
-# (md5sum: 4b3bcecf0dfc35928a0898793cf3e4c6)
-md5sum cuda_7.5.18_linux.run
-sudo service lightdm stop
-sudo killall Xorg
-sudo sh cuda_7.5.18_linux.run --no-opengl-libs
-----------------uninstall----------------------
- sudo /usr/local/cuda-7.5/bin/uninstall_cuda_7.5.pl # toolkit
- sudo /usr/bin/nvidia-uninstall # driver
-```
+
 
 #### Update environment
 ```sh
