@@ -107,6 +107,9 @@ git config --global credential.helper cache
 git config --global credential.helper 'cache --timeout=3600'
 #
 git config --global push.default simple
+# username config
+git config --global user.email "praveenneuron@gmail.com"
+git config --global user.name "praveenneuron"
 # Get back the saving scripts
 cd ~
 git clone https://github.com/praveenneuron/private-files.git
@@ -137,7 +140,7 @@ sudo sh cuda_7.5.18_linux.run --no-opengl-libs
 ```sh
 ############ NON-LOCAL DEB
 # (md5sum: e1f61e1e62fb354ab7a662f82b1f4b0d)
-md5sum cuda-repo-ubuntu1404_7.5-18_amd64.deb 
+md5sum cuda-repo-ubuntu1404_7.5-18_amd64.deb
 # install
 sudo apt-get update
 sudo apt-get upgrade
