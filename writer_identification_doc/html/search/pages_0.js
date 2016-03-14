@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['writer_20identification',['Writer Identification',['../index.html',1,'']]]
+  ['code_20and_20file_20structure',['Code and file Structure',['../md_code_structure.html',1,'']]]
 ];
