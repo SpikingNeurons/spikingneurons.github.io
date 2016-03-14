@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['data_5fhandling_2epy',['data_handling.py',['../data__handling_8py.html',1,'']]],
-  ['data_20set_20description',['Data Set description',['../md_about_dataset.html',1,'']]]
+  ['code_5fstructure_2emd',['code_structure.md',['../code__structure_8md.html',1,'']]],
+  ['compare_2em',['compare.m',['../compare_8m.html',1,'']]],
+  ['code_20and_20file_20structure',['Code and file Structure',['../md_code_structure.html',1,'']]]
 ];

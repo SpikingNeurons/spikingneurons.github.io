@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['write_5fdelimited_5ffile',['write_delimited_file',['../namespacesource_1_1data__handling.html#a38c008534c7572ad0a7ed916aecbff40',1,'source::data_handling']]]
+  ['hist',['hist',['../hist__12directions_8m.html#a4915920d767f89731a7707726ff79fcb',1,'hist(i+1):&#160;hist_12directions.m'],['../hist__16directions_8m.html#a4915920d767f89731a7707726ff79fcb',1,'hist(i+1):&#160;hist_16directions.m'],['../hist__4directions_8m.html#a4915920d767f89731a7707726ff79fcb',1,'hist(i+1):&#160;hist_4directions.m'],['../hist__8directions_8m.html#a4915920d767f89731a7707726ff79fcb',1,'hist(i+1):&#160;hist_8directions.m']]]
 ];
