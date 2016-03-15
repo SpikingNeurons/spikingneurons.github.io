@@ -1,4 +1,0 @@
-var searchData=
-[
-  ['if',['if',['../hist__12directions_8m.html#a765ca939e6b977f38f7a6f4ce58e58ba',1,'if((myX &gt;=1)&amp;&amp;(myX&lt;=width)&amp;&amp;(myY &gt;=1)&amp;&amp;(myY&lt;=height)) if(edge1(myX:&#160;hist_12directions.m'],['../hist__16directions_8m.html#a765ca939e6b977f38f7a6f4ce58e58ba',1,'if((myX &gt;=1)&amp;&amp;(myX&lt;=width)&amp;&amp;(myY &gt;=1)&amp;&amp;(myY&lt;=height)) if(edge1(myX:&#160;hist_16directions.m'],['../hist__4directions_8m.html#a765ca939e6b977f38f7a6f4ce58e58ba',1,'if((myX &gt;=1)&amp;&amp;(myX&lt;=width)&amp;&amp;(myY &gt;=1)&amp;&amp;(myY&lt;=height)) if(edge1(myX:&#160;hist_4directions.m'],['../hist__8directions_8m.html#a765ca939e6b977f38f7a6f4ce58e58ba',1,'if((myX &gt;=1)&amp;&amp;(myX&lt;=width)&amp;&amp;(myY &gt;=1)&amp;&amp;(myY&lt;=height)) if(edge1(myX:&#160;hist_8directions.m'],['../main_8m.html#a0cf89381e000f42e6b339f60bd2191df',1,'if(distance&lt; mindistance) mindistance:&#160;main.m']]]
-];
