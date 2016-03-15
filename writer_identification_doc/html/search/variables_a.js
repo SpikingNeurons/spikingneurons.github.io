@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['name',['name',['../main_8m.html#ab74e6bf80237ddc4109968cedc58c151',1,'main.m']]],
-  ['names',['names',['../main_8m.html#a7d9df0b08f5a808d295f7a8335151070',1,'main.m']]],
-  ['nb',['nb',['../hist__12directions_8m.html#a354239254bb0bbc70906efd41cd8adc9',1,'nb():&#160;hist_12directions.m'],['../hist__16directions_8m.html#a354239254bb0bbc70906efd41cd8adc9',1,'nb():&#160;hist_16directions.m'],['../hist__4directions_8m.html#a354239254bb0bbc70906efd41cd8adc9',1,'nb():&#160;hist_4directions.m'],['../hist__8directions_8m.html#a354239254bb0bbc70906efd41cd8adc9',1,'nb():&#160;hist_8directions.m']]]
+  ['mindistance',['mindistance',['../main_8m.html#a459d4cc0ab57683249616d65e5e03d03',1,'main.m']]],
+  ['momentum',['momentum',['../namespacesource_1_1rbm__learn__model.html#ab6a20017c6ac76a11cce4f54ca9f2d9f',1,'source::rbm_learn_model']]],
+  ['myy',['myY',['../hist__12directions_8m.html#a6838f4cce9d6bb52b8737f776d10f4df',1,'myY():&#160;hist_12directions.m'],['../hist__16directions_8m.html#a6838f4cce9d6bb52b8737f776d10f4df',1,'myY():&#160;hist_16directions.m'],['../hist__4directions_8m.html#a6838f4cce9d6bb52b8737f776d10f4df',1,'myY():&#160;hist_4directions.m'],['../hist__8directions_8m.html#a6838f4cce9d6bb52b8737f776d10f4df',1,'myY():&#160;hist_8directions.m']]]
 ];

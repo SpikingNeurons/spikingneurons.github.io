@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['code_5fstructure_2emd',['code_structure.md',['../code__structure_8md.html',1,'']]],
-  ['compare_2em',['compare.m',['../compare_8m.html',1,'']]]
+  ['benchmark_5fall_2epy',['benchmark_all.py',['../benchmark__all_8py.html',1,'']]],
+  ['benchmark_5fknn_2epy',['benchmark_knn.py',['../benchmark__knn_8py.html',1,'']]],
+  ['benchmark_5fsvm_2epy',['benchmark_svm.py',['../benchmark__svm_8py.html',1,'']]]
 ];
