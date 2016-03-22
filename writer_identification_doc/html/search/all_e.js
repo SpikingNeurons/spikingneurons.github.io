@@ -1,9 +1,8 @@
 var searchData=
 [
-  ['r',['r',['../namespacesource_1_1test__theano__with__gpu.html#a91975c1aed1ca230222eaf94f2ccf1f7',1,'source::test_theano_with_gpu']]],
-  ['rbm_5fgenerate_5fnew_5frepresentation_2epy',['rbm_generate_new_representation.py',['../rbm__generate__new__representation_8py.html',1,'']]],
-  ['rbm_5flearn_5fmodel_2epy',['rbm_learn_model.py',['../rbm__learn__model_8py.html',1,'']]],
-  ['readme_2emd',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]],
-  ['report_2etxt',['report.txt',['../report_8txt.html',1,'']]],
-  ['rng',['rng',['../namespacesource_1_1test__theano__with__gpu.html#a135be1f57cc254ab8957a879ab9fef9e',1,'source::test_theano_with_gpu']]]
+  ['pca_5frepresentation',['pca_representation',['../namespacegenerate__new__representation.html#aca8c0fa4d741e3430d17d77eb6c279f9',1,'generate_new_representation']]],
+  ['plot_5fhidden_5factivities',['plot_hidden_activities',['../namespacerbm__analysis.html#a00738773b7d7238c4f142daa85b5e1d6',1,'rbm_analysis']]],
+  ['plot_5frbm_5ferror',['plot_rbm_error',['../namespaceutility_1_1plot__to__pdf.html#a989687ff2ed38acd1283dce4f30fcd55',1,'utility::plot_to_pdf']]],
+  ['plot_5fto_5fpdf_2epy',['plot_to_pdf.py',['../plot__to__pdf_8py.html',1,'']]],
+  ['plot_5ftraining_5ferror',['plot_training_error',['../namespacerbm__analysis.html#aa69ad6e16358d55f07d7f8d190f6ecbd',1,'rbm_analysis']]]
 ];

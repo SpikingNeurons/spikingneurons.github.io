@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['r',['r',['../namespacesource_1_1test__theano__with__gpu.html#a91975c1aed1ca230222eaf94f2ccf1f7',1,'source::test_theano_with_gpu']]],
-  ['rng',['rng',['../namespacesource_1_1test__theano__with__gpu.html#a135be1f57cc254ab8957a879ab9fef9e',1,'source::test_theano_with_gpu']]]
+  ['r',['r',['../namespacegpu__test__theano__with__gpu.html#a2f8c6e8611f62576b821cb4e733323db',1,'gpu_test_theano_with_gpu']]],
+  ['rng',['rng',['../namespacegpu__test__theano__with__gpu.html#ac7da5aba65a6b03622bdc49a1f8e36a0',1,'gpu_test_theano_with_gpu']]]
 ];

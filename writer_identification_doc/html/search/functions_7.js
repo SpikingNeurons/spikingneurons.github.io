@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['test_5fload_5ffeatures_5fand_5flabels',['test_load_features_and_labels',['../classsource_1_1unit__tests_1_1_test_data_handling.html#ab258f7b9359d5ca0d894491cbe52e94c',1,'source::unit_tests::TestDataHandling']]],
-  ['test_5fpycuda',['test_pycuda',['../classsource_1_1unit__tests_1_1_test_py_c_u_d_a.html#aa3f9eea2c0c0e01db4e63e45d63aaed4',1,'source::unit_tests::TestPyCUDA']]]
+  ['main',['main',['../namespacebenchmark__all.html#a02e9279f5520d109efafe1a488158658',1,'benchmark_all.main()'],['../namespacebenchmark__knn.html#a0fa04cb79ec30e0b831706311ebfb7a9',1,'benchmark_knn.main()'],['../namespacebenchmark__svm.html#a626116dc2639f3849b001549aeff0bad',1,'benchmark_svm.main()'],['../namespacegpu__cuda.html#abaa59bb946a92341844b20cb813e810a',1,'gpu_cuda.main()']]],
+  ['make_5fpickle_5ffrom_5fcsv',['make_pickle_from_csv',['../namespaceutility_1_1data__handling.html#aeca440960888861e2006e3e3c810c4dd',1,'utility::data_handling']]]
 ];

@@ -1,19 +1,13 @@
 var searchData=
 [
-  ['benchmark_5fall',['benchmark_all',['../namespacesource_1_1benchmark__all.html',1,'source']]],
-  ['benchmark_5fknn',['benchmark_knn',['../namespacesource_1_1benchmark__knn.html',1,'source']]],
-  ['benchmark_5fsvm',['benchmark_svm',['../namespacesource_1_1benchmark__svm.html',1,'source']]],
-  ['cuda',['cuda',['../namespacesource_1_1cuda.html',1,'source']]],
-  ['data_5fhandling',['data_handling',['../namespacesource_1_1data__handling.html',1,'source']]],
-  ['rbm_5fgenerate_5fnew_5frepresentation',['rbm_generate_new_representation',['../namespacesource_1_1rbm__generate__new__representation.html',1,'source']]],
-  ['rbm_5flearn_5fmodel',['rbm_learn_model',['../namespacesource_1_1rbm__learn__model.html',1,'source']]],
-  ['savbv_2dwoc',['savbv-woc',['../namespacesavbv-woc.html',1,'']]],
-  ['savbv_2dwoc_2epy',['savbv-woc.py',['../savbv-woc_8py.html',1,'']]],
-  ['setup',['setup',['../namespacesavbv-woc.html#a36192ff63044c788881560b73f9cafce',1,'savbv-woc']]],
-  ['setup_5fstring',['setup_string',['../namespacesavbv-woc.html#a3ff63d4eaeb085b04453da7043c62a36',1,'savbv-woc']]],
-  ['small_5fshape',['small_shape',['../namespacesavbv-woc.html#a605de2660d67b7206dd04bba2b66eeaf',1,'savbv-woc']]],
-  ['source',['source',['../namespacesource.html',1,'']]],
-  ['start_5ftime',['start_time',['../namespacesource_1_1rbm__learn__model.html#ac4cdbcd3543dcb1a5eb9a55c6777701d',1,'source::rbm_learn_model']]],
-  ['test_5ftheano_5fwith_5fgpu',['test_theano_with_gpu',['../namespacesource_1_1test__theano__with__gpu.html',1,'source']]],
-  ['unit_5ftests',['unit_tests',['../namespacesource_1_1unit__tests.html',1,'source']]]
+  ['r',['r',['../namespacegpu__test__theano__with__gpu.html#a2f8c6e8611f62576b821cb4e733323db',1,'gpu_test_theano_with_gpu']]],
+  ['rbm_5fanalysis',['rbm_analysis',['../namespacerbm__analysis.html',1,'']]],
+  ['rbm_5fanalysis_2epy',['rbm_analysis.py',['../rbm__analysis_8py.html',1,'']]],
+  ['rbm_5flearn_5fmodel',['rbm_learn_model',['../namespacerbm__learn__model.html',1,'']]],
+  ['rbm_5flearn_5fmodel_2epy',['rbm_learn_model.py',['../rbm__learn__model_8py.html',1,'']]],
+  ['rbm_5frepresentation',['rbm_representation',['../namespacegenerate__new__representation.html#aa1841232bf54a03ae980ac06d452eafb',1,'generate_new_representation']]],
+  ['readme_2emd',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]],
+  ['report_2etxt',['report.txt',['../source_2report_8txt.html',1,'']]],
+  ['report_2etxt',['report.txt',['../data_2new__representation_2rbm__4000_2report_8txt.html',1,'']]],
+  ['rng',['rng',['../namespacegpu__test__theano__with__gpu.html#ac7da5aba65a6b03622bdc49a1f8e36a0',1,'gpu_test_theano_with_gpu']]]
 ];

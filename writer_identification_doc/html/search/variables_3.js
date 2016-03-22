@@ -1,8 +1,10 @@
 var searchData=
 [
-  ['edge1',['edge1',['../hist__12directions_8m.html#a367c63297bb1f421930772fe599009c5',1,'edge1():&#160;hist_12directions.m'],['../hist__16directions_8m.html#a367c63297bb1f421930772fe599009c5',1,'edge1():&#160;hist_16directions.m'],['../hist__4directions_8m.html#a367c63297bb1f421930772fe599009c5',1,'edge1():&#160;hist_4directions.m'],['../hist__8directions_8m.html#a367c63297bb1f421930772fe599009c5',1,'edge1():&#160;hist_8directions.m']]],
-  ['end',['end',['../main_8m.html#af4fd934958ab03659142a1e9f4ab5ad5',1,'main.m']]],
-  ['epoch',['epoch',['../namespacesource_1_1rbm__generate__new__representation.html#a3436fcc6f18b4177177a0a9acdc0066d',1,'source::rbm_generate_new_representation']]],
-  ['epsilon',['epsilon',['../namespacesource_1_1rbm__learn__model.html#a4e3e5a65a31d353230405f33f5467ba7',1,'source::rbm_learn_model']]],
-  ['err',['err',['../namespacesource_1_1rbm__learn__model.html#abe2706898206d9f707dc4bdfd9c1a7c4',1,'source::rbm_learn_model']]]
+  ['df',['df',['../namespaceutility_1_1plot__to__pdf.html#a21eeacccb0b010ffbdd6dabeed02f9cc',1,'utility::plot_to_pdf']]],
+  ['diff',['diff',['../compare_8m.html#acbb9d2dc78b59ac8322ba303b960b44b',1,'compare.m']]],
+  ['directions_5fhist1_5f4_5f2',['directions_hist1_4_2',['../compare_8m.html#ac034753f704ffe77ee4ae2baeaee0155',1,'compare.m']]],
+  ['directions_5fhist2_5f8_5f2',['directions_hist2_8_2',['../compare_8m.html#a719ffae1709a179c75386001abb15103',1,'compare.m']]],
+  ['directions_5fhist3_5f12_5f2',['directions_hist3_12_2',['../compare_8m.html#a31b12197762be28645f578274440a8eb',1,'compare.m']]],
+  ['directions_5fhist4_5f16_5f2',['directions_hist4_16_2',['../compare_8m.html#a9cbc7d9d134464ba4c5fb2d35e6a9b3d',1,'compare.m']]],
+  ['distance',['distance',['../compare_8m.html#a3139244bfb778557108cda2114f91f3f',1,'distance():&#160;compare.m'],['../main_8m.html#a3139244bfb778557108cda2114f91f3f',1,'distance():&#160;main.m']]]
 ];

@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['v',['v',['../namespacesource_1_1rbm__learn__model.html#af373f07448f7c96ad70486adbb6fa948',1,'source::rbm_learn_model']]],
-  ['v_5ftrue',['v_true',['../namespacesource_1_1rbm__learn__model.html#a8f13b119079135e3b03ac41a9cdd122e',1,'source::rbm_learn_model']]],
-  ['vlen',['vlen',['../namespacesource_1_1test__theano__with__gpu.html#a800f8a4a25e1603336a8c9b9c789d9f1',1,'source::test_theano_with_gpu']]]
+  ['verbosity',['verbosity',['../namespaceunit__tests.html#a313fc1c0dc3fc8e80b165d741f80400e',1,'unit_tests']]],
+  ['vlen',['vlen',['../namespacegpu__test__theano__with__gpu.html#ad1022d0e31710902c0390eeb524405d0',1,'gpu_test_theano_with_gpu']]]
 ];

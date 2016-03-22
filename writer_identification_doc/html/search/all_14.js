@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['x',['x',['../hist__12directions_8m.html#a597100035d0b6607f5a0e6fbce27a43e',1,'x():&#160;hist_12directions.m'],['../hist__16directions_8m.html#a7265972fe485274cfff77a9bb07b8fce',1,'x():&#160;hist_16directions.m'],['../hist__4directions_8m.html#a7265972fe485274cfff77a9bb07b8fce',1,'x():&#160;hist_4directions.m'],['../hist__8directions_8m.html#a7265972fe485274cfff77a9bb07b8fce',1,'x():&#160;hist_8directions.m'],['../x_c1_8m.html#a597100035d0b6607f5a0e6fbce27a43e',1,'x():&#160;xC1.m'],['../x_c2_8m.html#a597100035d0b6607f5a0e6fbce27a43e',1,'x():&#160;xC2.m'],['../x_c3_8m.html#a597100035d0b6607f5a0e6fbce27a43e',1,'x():&#160;xC3.m'],['../x_c4_8m.html#a597100035d0b6607f5a0e6fbce27a43e',1,'x():&#160;xC4.m'],['../namespacesource_1_1test__theano__with__gpu.html#a7b64c0b28bcff450e8ca7e9b0aa82782',1,'source.test_theano_with_gpu.x()']]],
-  ['xc1_2em',['xC1.m',['../x_c1_8m.html',1,'']]],
-  ['xc2_2em',['xC2.m',['../x_c2_8m.html',1,'']]],
-  ['xc3_2em',['xC3.m',['../x_c3_8m.html',1,'']]],
-  ['xc4_2em',['xC4.m',['../x_c4_8m.html',1,'']]]
+  ['writer_20identification',['Writer Identification',['../index.html',1,'']]],
+  ['width',['width',['../hist__12directions_8m.html#a5558ace5433f9aabbf0a0ec059900d94',1,'width():&#160;hist_12directions.m'],['../hist__16directions_8m.html#a5558ace5433f9aabbf0a0ec059900d94',1,'width():&#160;hist_16directions.m'],['../hist__4directions_8m.html#a5558ace5433f9aabbf0a0ec059900d94',1,'width():&#160;hist_4directions.m'],['../hist__8directions_8m.html#a5558ace5433f9aabbf0a0ec059900d94',1,'width():&#160;hist_8directions.m']]],
+  ['write_5fdelimited_5ffile',['write_delimited_file',['../namespaceutility_1_1data__handling.html#afde18b21e1484a8fc876211664b3c961',1,'utility::data_handling']]]
 ];

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['disp',['disp',['../main_8m.html#ac7f8829cdeb54985aea5bb0ca4b78f11',1,'main.m']]],
-  ['dot_5fproduct_5fkernel',['dot_product_kernel',['../namespacesource_1_1benchmark__svm.html#aa5d1bd535e0fbb026a9f7c6f3176d084',1,'source::benchmark_svm']]]
+  ['build_5fhidden_5factivities',['build_hidden_activities',['../namespacerbm__analysis.html#af6e5522ddfd6f94b680518ef84fbc32f',1,'rbm_analysis']]]
 ];
