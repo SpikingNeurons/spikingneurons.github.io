@@ -6,6 +6,6 @@ var searchData=
   ['end_5fepoch',['end_epoch',['../namespacerbm__learn__model.html#a07f063bec680453e02d7ac033a7a1a1c',1,'rbm_learn_model']]],
   ['epoch_5fselect',['epoch_select',['../namespacerbm__analysis.html#af5716314aac84de9045a8be186190914',1,'rbm_analysis']]],
   ['epoch_5fslice',['epoch_slice',['../namespacerbm__analysis.html#ae2bd83189febd81fed070e177be7d345',1,'rbm_analysis']]],
-  ['execute_5fclassifier',['execute_classifier',['../namespacebenchmark.html#ac2dab8af6601f84e29fc201636c82802',1,'benchmark.execute_classifier()'],['../namespacebenchmark__all.html#a1a2152aeca059627d802248ff80407e0',1,'benchmark_all.execute_classifier()']]],
+  ['execute_5fclassifier',['execute_classifier',['../namespacebenchmark.html#ac2dab8af6601f84e29fc201636c82802',1,'benchmark']]],
   ['environment_20and_20installing_20instructions',['Environment and installing instructions',['../md_installation.html',1,'']]]
 ];

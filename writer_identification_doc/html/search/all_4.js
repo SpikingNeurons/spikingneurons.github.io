@@ -9,6 +9,5 @@ var searchData=
   ['directions_5fhist4_5f16_5f2',['directions_hist4_16_2',['../compare_8m.html#a9cbc7d9d134464ba4c5fb2d35e6a9b3d',1,'compare.m']]],
   ['disp',['disp',['../main_8m.html#ac7f8829cdeb54985aea5bb0ca4b78f11',1,'main.m']]],
   ['distance',['distance',['../compare_8m.html#a3139244bfb778557108cda2114f91f3f',1,'distance():&#160;compare.m'],['../main_8m.html#a3139244bfb778557108cda2114f91f3f',1,'distance():&#160;main.m']]],
-  ['dot_5fproduct_5fkernel',['dot_product_kernel',['../namespacebenchmark__svm.html#ae142db192960d7c237a5eeef482c432e',1,'benchmark_svm']]],
   ['data_20set_20description',['Data Set description',['../md_about_dataset.html',1,'']]]
 ];
