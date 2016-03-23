@@ -9,5 +9,11 @@ var searchData=
   ['readme_2emd',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]],
   ['report_2etxt',['report.txt',['../source_2report_8txt.html',1,'']]],
   ['report_2etxt',['report.txt',['../data_2new__representation_2rbm__4000_2report_8txt.html',1,'']]],
-  ['rng',['rng',['../namespacegpu__test__theano__with__gpu.html#ac7da5aba65a6b03622bdc49a1f8e36a0',1,'gpu_test_theano_with_gpu']]]
+  ['report_5fas_20it_20is_2etxt',['Report_As it is.txt',['../_report___as_01it_01is_8txt.html',1,'']]],
+  ['report_5frbm_2etxt',['Report_RBM.txt',['../_report___r_b_m_8txt.html',1,'']]],
+  ['rng',['rng',['../namespacegpu__test__theano__with__gpu.html#ac7da5aba65a6b03622bdc49a1f8e36a0',1,'gpu_test_theano_with_gpu']]],
+  ['run_5fparallel_5fwith_5fas_5fit_5fis_5frepresentation',['run_parallel_with_as_it_is_representation',['../namespacebenchmark.html#a0cb3c829ee466af6522e4f839d997dd4',1,'benchmark']]],
+  ['run_5fparallel_5fwith_5flda_5frepresentation',['run_parallel_with_LDA_representation',['../namespacebenchmark.html#a9d8335b7138a2fc2ca5682eb0d0d7036',1,'benchmark']]],
+  ['run_5fparallel_5fwith_5fpca_5frepresentation',['run_parallel_with_PCA_representation',['../namespacebenchmark.html#a5ca3cc9252148a357b474bbea5f5c3e1',1,'benchmark']]],
+  ['run_5fparallel_5fwith_5frbm_5frepresentation',['run_parallel_with_RBM_representation',['../namespacebenchmark.html#a97df3222ef69a94ee7fc4c92636cb548',1,'benchmark']]]
 ];

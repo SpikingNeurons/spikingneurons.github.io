@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['width',['width',['../hist__12directions_8m.html#a5558ace5433f9aabbf0a0ec059900d94',1,'width():&#160;hist_12directions.m'],['../hist__16directions_8m.html#a5558ace5433f9aabbf0a0ec059900d94',1,'width():&#160;hist_16directions.m'],['../hist__4directions_8m.html#a5558ace5433f9aabbf0a0ec059900d94',1,'width():&#160;hist_4directions.m'],['../hist__8directions_8m.html#a5558ace5433f9aabbf0a0ec059900d94',1,'width():&#160;hist_8directions.m']]]
+  ['verbosity',['verbosity',['../namespaceunit__tests.html#a313fc1c0dc3fc8e80b165d741f80400e',1,'unit_tests']]],
+  ['vlen',['vlen',['../namespacegpu__test__theano__with__gpu.html#ad1022d0e31710902c0390eeb524405d0',1,'gpu_test_theano_with_gpu']]]
 ];

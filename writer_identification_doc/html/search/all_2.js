@@ -4,6 +4,8 @@ var searchData=
   ['benchmark_2epy',['benchmark.py',['../benchmark_8py.html',1,'']]],
   ['benchmark_5fall',['benchmark_all',['../namespacebenchmark__all.html',1,'']]],
   ['benchmark_5fall_2epy',['benchmark_all.py',['../benchmark__all_8py.html',1,'']]],
+  ['benchmark_5fauto',['benchmark_auto',['../namespacebenchmark__auto.html',1,'']]],
+  ['benchmark_5fauto_2epy',['benchmark_auto.py',['../benchmark__auto_8py.html',1,'']]],
   ['benchmark_5fknn',['benchmark_knn',['../namespacebenchmark__knn.html',1,'']]],
   ['benchmark_5fknn_2epy',['benchmark_knn.py',['../benchmark__knn_8py.html',1,'']]],
   ['benchmark_5fsvm',['benchmark_svm',['../namespacebenchmark__svm.html',1,'']]],

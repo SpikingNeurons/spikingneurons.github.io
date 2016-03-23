@@ -2,8 +2,9 @@ var dir_b2f33c71d4aa5e7af42a1ca61ff5af1b =
 [
     [ "feature_extraction", "dir_fddbdbd090ae0b3cc5a8b2585c529a95.html", "dir_fddbdbd090ae0b3cc5a8b2585c529a95" ],
     [ "utility", "dir_9c0a31a0fda0311883ab1ff5f08f5283.html", "dir_9c0a31a0fda0311883ab1ff5f08f5283" ],
-    [ "benchmark.py", "benchmark_8py.html", null ],
+    [ "benchmark.py", "benchmark_8py.html", "benchmark_8py" ],
     [ "benchmark_all.py", "benchmark__all_8py.html", "benchmark__all_8py" ],
+    [ "benchmark_auto.py", "benchmark__auto_8py.html", null ],
     [ "benchmark_knn.py", "benchmark__knn_8py.html", "benchmark__knn_8py" ],
     [ "benchmark_svm.py", "benchmark__svm_8py.html", "benchmark__svm_8py" ],
     [ "generate_new_representation.py", "generate__new__representation_8py.html", "generate__new__representation_8py" ],

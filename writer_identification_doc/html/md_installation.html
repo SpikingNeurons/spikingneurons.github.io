@@ -129,12 +129,16 @@ $(document).ready(function(){initNavTree('md_installation.html','');});
 <li>Next update <code>nvcc.profile</code> in cuda installation bin directory to:</li>
 </ul>
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;INCLUDES        +=  &quot;-I$(TOP)/include&quot; &quot;-I$(TOP)/include/cudart&quot; &quot;-ID:\InstalledPrograms\Nvidia\CUDA\v75\include&quot; $(_SPACE_)</div></div><!-- fragment --><h3>Intel math kernel libraries (optional)</h3>
-<p>Use pro licence of anaconda for using <code>intel mkl libraries</code>. If not available then it can use default math libraries provided by visual studio <code>cl</code> compiler. </p><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;conda install accelerate</div></div><!-- fragment --> </div></div><!-- contents -->
+<p>Use pro licence of anaconda for using <code>intel mkl libraries</code>. If not available then it can use default math libraries provided by visual studio <code>cl</code> compiler. </p><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;conda install accelerate</div></div><!-- fragment --><h3>Auto ML (optional)</h3>
+<ul>
+<li><a href="https://github.com/automl/auto-sklearn/blob/master/source/index.rst">Github</a></li>
+</ul>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;pip install -r https://raw.githubusercontent.com/automl/auto-sklearn/master/requ.txt</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;rem pip install git+https://github.com/automl/auto-sklearn.git#egg=autosklearn</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;e:</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;activate py35</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;cd Github</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;git clone https://github.com/automl/auto-sklearn.git</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;cd auto-sklearn</div></div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Mar 22 2016 22:04:26 for Writer Identification by
+    <li class="footer">Generated on Wed Mar 23 2016 09:46:16 for Writer Identification by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

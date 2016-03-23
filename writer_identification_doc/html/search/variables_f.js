@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['verbosity',['verbosity',['../namespaceunit__tests.html#a313fc1c0dc3fc8e80b165d741f80400e',1,'unit_tests']]],
-  ['vlen',['vlen',['../namespacegpu__test__theano__with__gpu.html#ad1022d0e31710902c0390eeb524405d0',1,'gpu_test_theano_with_gpu']]]
+  ['t0',['t0',['../namespacegpu__test__theano__with__gpu.html#a9c198b9efdf7d42c5ff7e79ee6099315',1,'gpu_test_theano_with_gpu']]],
+  ['t1',['t1',['../namespacegpu__test__theano__with__gpu.html#ac426ecce81e47f7e707b86f4ebaf3b84',1,'gpu_test_theano_with_gpu']]]
 ];

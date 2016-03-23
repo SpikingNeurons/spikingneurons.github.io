@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['main',['main',['../namespacebenchmark__all.html#a02e9279f5520d109efafe1a488158658',1,'benchmark_all.main()'],['../namespacebenchmark__knn.html#a0fa04cb79ec30e0b831706311ebfb7a9',1,'benchmark_knn.main()'],['../namespacebenchmark__svm.html#a626116dc2639f3849b001549aeff0bad',1,'benchmark_svm.main()'],['../namespacegpu__cuda.html#abaa59bb946a92341844b20cb813e810a',1,'gpu_cuda.main()']]],
-  ['make_5fpickle_5ffrom_5fcsv',['make_pickle_from_csv',['../namespaceutility_1_1data__handling.html#aeca440960888861e2006e3e3c810c4dd',1,'utility::data_handling']]]
+  ['lda_5frepresentation',['lda_representation',['../namespacegenerate__new__representation.html#a95cbbff9a512f42c874adf8d118ca3e5',1,'generate_new_representation']]],
+  ['load_5ffeatures_5fand_5flabels',['load_features_and_labels',['../namespaceutility_1_1data__handling.html#a2ba18e754c3d88edb3c8063920bf40a8',1,'utility::data_handling']]]
 ];
