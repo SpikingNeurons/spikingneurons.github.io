@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['train_20rbm',['Train RBM',['../md_running_code.html',1,'']]],
   ['t0',['t0',['../namespacegpu__test__theano__with__gpu.html#a9c198b9efdf7d42c5ff7e79ee6099315',1,'gpu_test_theano_with_gpu']]],
   ['t1',['t1',['../namespacegpu__test__theano__with__gpu.html#ac426ecce81e47f7e707b86f4ebaf3b84',1,'gpu_test_theano_with_gpu']]],
   ['test_5fgenerate_5fnew_5frepresentation_5frbm',['test_generate_new_representation_rbm',['../classunit__tests_1_1_test_writer_identification.html#ab629b7adb976abebbe311da95fdd77b8',1,'unit_tests::TestWriterIdentification']]],

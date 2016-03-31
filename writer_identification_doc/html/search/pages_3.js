@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['writer_20identification',['Writer Identification',['../index.html',1,'']]]
+  ['train_20rbm',['Train RBM',['../md_running_code.html',1,'']]]
 ];

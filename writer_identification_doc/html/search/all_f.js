@@ -15,5 +15,6 @@ var searchData=
   ['rng',['rng',['../namespacegpu__test__theano__with__gpu.html#ac7da5aba65a6b03622bdc49a1f8e36a0',1,'gpu_test_theano_with_gpu']]],
   ['run_5fparallel_5fwith_5fasitis_5frepresentation',['run_parallel_with_ASITIS_representation',['../namespacebenchmark.html#aad20dde681f0a84b14b7fd59cf4e7ca5',1,'benchmark']]],
   ['run_5fparallel_5fwith_5flinearsvc_5ffeature_5fselection',['run_parallel_with_LinearSVC_feature_selection',['../namespacebenchmark.html#aaab065b4e101997f5d337f91ab66136f',1,'benchmark']]],
-  ['run_5fparallel_5fwith_5frbm_5frepresentation',['run_parallel_with_RBM_representation',['../namespacebenchmark.html#a97df3222ef69a94ee7fc4c92636cb548',1,'benchmark']]]
+  ['run_5fparallel_5fwith_5frbm_5frepresentation',['run_parallel_with_RBM_representation',['../namespacebenchmark.html#a97df3222ef69a94ee7fc4c92636cb548',1,'benchmark']]],
+  ['running_5fcode_2emd',['running_code.md',['../running__code_8md.html',1,'']]]
 ];

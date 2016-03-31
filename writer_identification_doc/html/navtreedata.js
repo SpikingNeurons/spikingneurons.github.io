@@ -4,6 +4,7 @@ var NAVTREE =
     [ "Data Set description", "md_about_dataset.html", null ],
     [ "Code and file Structure", "md_code_structure.html", null ],
     [ "Environment and installing instructions", "md_installation.html", null ],
+    [ "Train RBM", "md_running_code.html", null ],
     [ "Namespace Members", "namespacemembers.html", [
       [ "All", "namespacemembers.html", null ],
       [ "Functions", "namespacemembers_func.html", null ],

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Writer Identification: Member List</title>
+<title>Writer Identification: Train RBM</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -49,8 +49,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
-      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -70,14 +70,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </li>
     </ul>
   </div>
-  <div id="navrow2" class="tabs2">
-    <ul class="tablist">
-      <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
-      <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
-      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
-      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
-    </ul>
-  </div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -90,7 +82,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('classunit__tests_1_1_test_writer_identification.html','');});
+$(document).ready(function(){initNavTree('md_running_code.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -109,16 +101,34 @@ $(document).ready(function(){initNavTree('classunit__tests_1_1_test_writer_ident
 
 <div class="header">
   <div class="headertitle">
-<div class="title">unit_tests.TestWriterIdentification Member List</div>  </div>
+<div class="title">Train RBM </div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p>This is the complete list of members for <a class="el" href="classunit__tests_1_1_test_writer_identification.html">unit_tests.TestWriterIdentification</a>, including all inherited members.</p>
-<table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="classunit__tests_1_1_test_writer_identification.html#ab629b7adb976abebbe311da95fdd77b8">test_generate_new_representation_rbm</a>(self)</td><td class="entry"><a class="el" href="classunit__tests_1_1_test_writer_identification.html">unit_tests.TestWriterIdentification</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classunit__tests_1_1_test_writer_identification.html#aea408499d3807bc3d632cc9d117d8a14">test_load_features_and_labels</a>(self)</td><td class="entry"><a class="el" href="classunit__tests_1_1_test_writer_identification.html">unit_tests.TestWriterIdentification</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classunit__tests_1_1_test_writer_identification.html#a806c3b6361ad03c7b58a708965adfc35">test_pycuda</a>(self)</td><td class="entry"><a class="el" href="classunit__tests_1_1_test_writer_identification.html">unit_tests.TestWriterIdentification</a></td><td class="entry"></td></tr>
-</table></div><!-- contents -->
+<div class="textblock"><ul>
+<li>modify the call to training algo based on ypur requirement <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<a class="code" href="namespacerbm__learn__model.html#a4179792a2bc3dbe6293fa85ff90c3f0c">train_rbm</a>(num_hid=4000, start_epoch=0, end_epoch=3600, skip_iter=50)</div></div><!-- fragment --></li>
+<li>then run the code <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;python rbm_learn_model.py</div></div><!-- fragment --></li>
+<li>this will dump learned weight parameters after every 50 iterations inside <code>WriterIdentification\data\new_representation</code> this will go on till iteration 3600</li>
+<li>If training crashes due less disk space in some intermediate epoch you can easily resume by modifying <code>start_epoch</code> value</li>
+</ul>
+<h1>Run benchmark</h1>
+<ul>
+<li>plug any classifier you want in method <code><a class="el" href="namespacebenchmark.html#a943c2f5ad7ceafa3ad05007b9ea7ec6a">get_classifier_dict()</a></code> we have initialized it for you already</li>
+<li>then run the code <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;python benchmark.py</div></div><!-- fragment --></li>
+<li>the code will run and dump the classification performance results in Report folder</li>
+<li>Note that the default configuration will run entire code as mentioned in our framework and will take lot of time. You can selectively switch off certain parts of code.</li>
+</ul>
+<h1>Analyzing the RBM learning</h1>
+<ul>
+<li>running the code will dump some csv files in report folder</li>
+<li>you need to visualize these file in some external tools</li>
+<li>I have used plot.ly (<a href="https://plot.ly">https://plot.ly</a>)</li>
+</ul>
+<h1>Running the unittests</h1>
+<ul>
+<li>for some critical functionalities unittestts are implemented</li>
+<li>Run it by <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;python unit_tests.py</div></div><!-- fragment --> </li>
+</ul>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
