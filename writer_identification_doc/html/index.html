@@ -108,8 +108,21 @@ $(document).ready(function(){initNavTree('index.html','');});
 <li>Image Processing project at Uni-Hamburg</li>
 <li><code>Author: Praveen Baburao Kulkarni</code></li>
 </ul>
-<p><b>About Project</b> </p><div class="fragment"><div class="line">This project is about author identification based on handwritten documents.</div><div class="line"></div><div class="line">[More details about implementation about algorithm will be added in <span class="stringliteral">&#39;Report and results&#39;</span> section later]</div></div><!-- fragment --><p><b>Further Information and links</b></p><ul>
+<p>| <a href="https://github.com/praveenneuron/WriterIdentification/blob/master/documentation/final_report.pdf">Download report</a> | <a href="https://github.com/praveenneuron/WriterIdentification/blob/master/documentation/final_presentation.pdf">Download presentation</a> |</p>
+<h2>**About Project**</h2>
+<p>In this project, a framework for writer identification and different components needed to build it will be presented. The system uses five different kinds of features (Curvature, Directional, Edge Based Chain code and Tortuosity) extracted from the images. These features can then be used for classification using different classifier algorithms. We observed that changing the feature representation and then applying training classifiers improves the results considerably as it helps untangle and reveal the different explanatory factors of variation behind the data. In our work, we used two strategies for changing input feature representation namely dimensionality reduction and representation learning.</p>
+<p>Two major contributions of this paper are:</p>
+<ul>
+<li>Using Restricted Boltzmann Machines (RBMs) for representation learning in context of writer identification task and comparing it with Latent Dirichlet Allocation</li>
+<li>Design of parallel framework for writer identification task</li>
+</ul>
+<p>We report classification accuracy of around 90 percent by doing dimensionality reduction with Linear Support Vector Classifier followed by classification using Linear Discriminant Analysis (LDA). On the other hand, 89.7 percent accuracy was observed by doing representation learning using RBMs followed by LDA for classification. The classification accuracy is equal to the state of art implementations which do not use RBMs. At the end of the paper, the parallel framework that was designed for writer identification and how all the components fit inside it will be presented.</p>
+<h2>**Further Information and links**</h2>
+<ul>
 <li><a href="http://praveenneuron.github.io/writer_identification_doc/html/md_installation.html">Environment and installing instructions</a></li>
+<li><a href="http://praveenneuron.github.io/writer_identification_doc/html/md_about_dataset.html">Data Set description</a></li>
+<li><a href="http://praveenneuron.github.io/writer_identification_doc/html/md_code_structure.html">Code and file Structure</a></li>
+<li><a href="./Documentation/installation">Environment and installing instructions</a></li>
 <li><a href="http://praveenneuron.github.io/writer_identification_doc/html/md_about_dataset.html">Data Set description</a></li>
 <li><a href="http://praveenneuron.github.io/writer_identification_doc/html/md_code_structure.html">Code and file Structure</a></li>
 </ul>
@@ -130,7 +143,7 @@ $(document).ready(function(){initNavTree('index.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Mar 23 2016 21:03:15 for Writer Identification by
+    <li class="footer">Generated on Thu Mar 31 2016 20:31:50 for Writer Identification by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>

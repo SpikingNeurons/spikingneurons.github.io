@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['g_5fclassifiers',['g_classifiers',['../namespacebenchmark.html#a378ea3cd172634b359f41c579a0bfb80',1,'benchmark']]],
   ['g_5ffeature_5fname',['g_feature_name',['../namespacebenchmark.html#a978169ac1a2818f3d1f8001a8ff27c24',1,'benchmark.g_feature_name()'],['../namespacegpu__cuda.html#a928bc08c2d2720bf114cc355ebfe9fa8',1,'gpu_cuda.g_feature_name()']]],
   ['g_5ftest',['g_test',['../namespacebenchmark.html#a02b2539c8a708fe19ec2493cc2e92c66',1,'benchmark.g_test()'],['../namespacegpu__cuda.html#a5f09f174480f83c7827ce80862eedd77',1,'gpu_cuda.g_test()']]],
   ['g_5ftest_5ffile',['g_test_file',['../namespaceutility_1_1data__handling.html#afca3e59f7334899f9f6c206c9aa06a20',1,'utility::data_handling']]],
