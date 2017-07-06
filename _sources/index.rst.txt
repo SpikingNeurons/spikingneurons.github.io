@@ -1,0 +1,318 @@
+.. Drift Correction for Augmented Reality documentation master file, created by
+   sphinx-quickstart on Wed May 10 23:14:51 2017.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+
+.. sectnum::
+
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+Abstract
+========
+
+Proposed Solution
+=================
+
+The Problem
+-----------
+
+Drift correction problem is well known when it comes to Simultaneous
+Locomotion And Localization (SLAM). This problem also occurs when it comes to
+AR devices and software like Tango, HoloLens, and Vuforia as they use some
+form of SLAM internally to do head tracking. When you position a marker in a
+3D world and are simultaneously building a map of surroundings as
+in “Extended Tracking” the marker tends to drift over time.
+
+.. figure:: .static\Drift_Correction.png
+   :scale: 50 %
+   :align: center
+   :alt: figure that explains drift correction
+
+   Estimated trajectory drifts over time [GoogleTango]_.
+
+
+
+Area Learning
+-------------
+
+To overcome and make sure that the holograms are placed in the exact location
+the approach taken by HoloLens and Google Tango API is to learn an area. That
+is can they try to remember the location of the hologram and updates the
+position of the hologram as and when the area is observed again. In the case of
+Vuforia, it takes an ImageTarget and performs extended tracking and tracks
+image marker as world reference.
+
+There are some limitations with these approaches:
+
++ Over far distance, we cannot guarantee that the holograms will not drift
++ Detection overhead
++ Failure in outdoor environment setup
+
+
+N-ray based correction estimates for Drift Correction
+-----------------------------------------------------
+
+Our approach to come up with drift correction estimates is made up of multiple
+steps as will be discussed below. The details are with respect to HoloLens.
+
+Area Learning
+^^^^^^^^^^^^^
+
+We use the area learning offered by Microsoft. This is done by initially
+detecting the marker and adding a spatial anchor at its place. This alone
+is good enough to get the marker estimates when we are near the marker.
+But in scenarios where the walking area is large and in outdoor setup,
+the hologram positioning is not reliable and custom detection and correction
+is required which will be explained in next steps.
+
+
+Initial N-ray collection by detecting marker
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+We make the user move around the marker and collect multiple n-viewports rays.
+Note that we do not use the 3D position of the marker but the ray between user
+head position and marker position. This helps us overcome depth accuracy issues.
+
+
+These n-rays are generally detected using marker detection and hence have no
+offset. Whereas the spatial anchors that we placed initially in section
+Area Learning clearly show the drifted position for the marker.
+
+
+Estimate 3D position using N-rays
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+.. note::
+    This is partially implemented.
+
+We use QR-solver to estimate the position of the marker using all the n-rays.
+Generally, we use around forty rays collected from all directions around the
+marker. Once the marker position is estimated we can switch off tracking
+or reduce the tracking rate of the marker. Ideally, it is a good idea to keep
+track of marker so that we keep collecting new rays pointing towards marker
+and delete old rays. This just helps us to be in sync with map updates that
+are happening inside HoloLens.
+
+
+Note that the QR solver runs on every frame. To keep the computational cost
+low we use special formulation of our problem rather than solving the system
+of linear equations for all rays. So the computational cost is linear to the
+number of rays being used by our system.
+
+
+.. figure:: .static\nrays_and_marker.png
+   :scale: 50 %
+   :align: center
+   :alt: figure Estimate 3D position using N-rays.
+
+   Estimate 3D position using N-rays.
+
+
+Weighted estimate of position
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. todo::
+    This is not yet implemented
+
+In order to further improve the 3D estimate of marker we update the marker
+position with the rays that are near the HoloLens with higher weightage.
+This is shown in below figure, where you can see that the green rays get more
+importance.
+
+
+.. figure:: .static\nrays_and_marker_weighted.png
+   :scale: 50 %
+   :align: center
+   :alt: figure Weighted Estimate 3D position using N-rays.
+
+   Weighted Estimate 3D position using N-rays.
+
+.. note::
+   This helps us ensure that the hologram places is correct with respect to
+   user perspective.
+
+
+Pose Estimate
+^^^^^^^^^^^^^
+
+.. todo::
+    This is not yet implemented
+
+The earlier discussion shows how we estimate position of marker. But using
+custom marker detection we cannot get reliable estimates of pose as we move
+far away. Hence, we use three markers to get the pose of the Golf green data
+correct. This is shown in below figure.
+
+
+.. figure:: .static\pose_estimation.png
+   :scale: 50 %
+   :align: center
+   :alt: figure Pose Estimation.
+
+   Pose Estimation.
+
+
+Derivations
+===========
+
+In this section we will derive equation related to estimating 3D position of
+marker based on rays collected from multiple viewports.
+
+
+Finding the shortest distance between a point and a ray
+-------------------------------------------------------
+
+Our goal here is find the distance between point :math:`P` and ray
+:math:`\overrightarrow{\ell}`.
+
+.. figure:: .static\dist_between_ray_and_point.png
+   :scale: 100 %
+   :align: center
+   :alt: figure Finding the shortest distance between a point and a ray.
+
+   Finding the shortest distance between a point and a ray. [Slabaugh2001]_
+
+We can easily exploit pythagoras theorem to find the distance as in below
+equation.
+
+.. math:: {\parallel RP \parallel}^2 = {\parallel QP \parallel}^2 - {\parallel QR \parallel}^2
+   :label: eq_pyth
+
+Thus the distance we are interested in is given by :math:`{\parallel RP \parallel}`.
+
+.. math:: {\parallel RP \parallel} = \sqrt{(x - x_1)^2 + (y - y_1)^2 + (z - z_1)^2 - [a_1(x - x_1) + b_1(y - y_1) + c_1(z - z_1)]^2}
+   :label: eq_pyth_dist
+
+Now when we have :math:`N` rays the sum of all distances from point :math:`P` to all rays is given by:
+
+
+.. math:: D(x,y,z) = \sum_{i=1}^N { \sqrt{(x - x_i)^2 + (y - y_i)^2 + (z - z_i)^2 - [a_i(x - x_i) + b_i(y - y_i) + c_i(z - z_i)]^2} }
+   :label: eq_pyth_dist_sum
+
+
+
+Formulating problem as optimization problem
+-------------------------------------------
+
+Here we make strong assumption that the point that is close to all rays is the
+3D position of the marker. That means that we want to minimize the distance in
+equation :eq:`eq_pyth_dist_sum`.
+
+Equation :eq:`eq_pyth_dist_sum` has a square root which makes the solution non-linear.
+Hense we instead try to optimize sum of squared distance.
+
+.. math:: E(x,y,z) = \sum_{i=1}^N \left[(x - x_i)^2 + (y - y_i)^2 + (z - z_i)^2 - [a_i(x - x_i) + b_i(y - y_i) + c_i(z - z_i)]^2\right]
+   :label: eq_optimize
+
+To seek the solution, we take partial derivative of equation :eq:`eq_optimize` and set it to zero.
+
+
+.. math:: \frac{\partial E(x,y,z)}{\partial x} = \sum_{i=1}^N \left[{2(x - x_i) - 2a_i\{a_i(x - x_i) + b_i(y - y_i) + c_i(z - z_i)\}}\right]=0
+   :label: eq_optimize_part_1
+
+.. math:: \frac{\partial E(x,y,z)}{\partial y} = \sum_{i=1}^N \left[{2(y - y_i) - 2b_i\{a_i(x - x_i) + b_i(y - y_i) + c_i(z - z_i)\}}\right]=0
+   :label: eq_optimize_part_2
+
+.. math:: \frac{\partial E(x,y,z)}{\partial z} = \sum_{i=1}^N \left[{2(z - z_i) - 2c_i\{a_i(x - x_i) + b_i(y - y_i) + c_i(z - z_i)\}}\right]=0
+   :label: eq_optimize_part_3
+
+Expanding the terms and dividing by :math:`2` we get:
+
+
+.. math:: \sum_{i=1}^N \left[x - x_i - a_i^2 x + a_i^2 x_i - a_i b_i y + a_i b_i y_i - a_i c_i z + a_i c_i z_i\right]=0
+   :label: eq_optimize_part_11
+
+.. math:: \sum_{i=1}^N \left[y - y_i - a_i b_i x + a_i b_i x_i  - b_i^2 y + b_i^2 y_i - b_i c_i z + b_i c_i z_i\right]=0
+   :label: eq_optimize_part_12
+
+.. math:: \sum_{i=1}^N \left[z - z_i - a_i c_i x + a_i c_i x_i - b_i c_i y + b_i c_i y_i - c_i^2 z + c_i^2 z_i\right]=0
+   :label: eq_optimize_part_13
+
+We will rearrange elements so that we can get into matrix form:
+
+
+.. math:: \sum_{i=1}^N \left[(1- a_i^2)x - a_i b_i y - a_i c_i z\right]=\sum_{i=1}^N \left[(1- a_i^2)x_i - a_i b_i y_i - a_i c_i z_i \right]
+   :label: eq_optimize_part_21
+
+.. math:: \sum_{i=1}^N \left[- a_i b_i x + (1- b_i^2)y - b_i c_i z\right] = \sum_{i=1}^N \left[- a_i b_i x_i + (1- b_i^2)y_i - b_i c_i z_i \right]
+   :label: eq_optimize_part_22
+
+.. math:: \sum_{i=1}^N \left[- a_i c_i x - b_i c_i y + (1- c_i^2)z\right] = \sum_{i=1}^N \left[- a_i c_i x_i - b_i c_i y_i + (1- c_i^2)z_i \right]
+   :label: eq_optimize_part_23
+
+Now we can write this system of linear equations in matrix form:
+
+.. math:: \begin{bmatrix}\sum_i{(1-a_i^2)} & -\sum_i{a_i b_i} & -\sum_i{a_i c_i} \\-\sum_i{a_i b_i} & \sum_i{(1-b_i^2)} & -\sum_i{b_i c_i} \\ -\sum_i{a_i c_i} & -\sum_i{b_i c_i} & \sum_i{(1-c_i^2)}\end{bmatrix} \begin{bmatrix} x \\ y \\ z \end{bmatrix} = \begin{bmatrix} \sum_i \left[(1- a_i^2)x_i - a_i b_i y_i - a_i c_i z_i \right] \\ \sum_i \left[- a_i b_i x_i + (1- b_i^2)y_i - b_i c_i z_i \right] \\ \sum_i \left[- a_i c_i x_i - b_i c_i y_i + (1- c_i^2)z_i \right] \end{bmatrix}
+   :label: eq_optimize_matrix
+
+
+
+
+Formulating problem for weighted estimation
+-------------------------------------------
+
+.. warning::
+   This is the derivation with weighted importance and to extend the above mentioned work.
+
+In equation :eq:`eq_optimize` we that all rays are equally important. For our problem we plan to have weighted importance for each ray based on user location in 3D world.
+We can now redefine our optimization problem as below, where :math:`\alpha_i` is the weight corresponding to ray :math:`\overrightarrow{\ell_i}`.
+
+.. math:: E(x,y,z) = \sum_{i=1}^N \alpha_i \left[(x - x_i)^2 + (y - y_i)^2 + (z - z_i)^2 - [a_i(x - x_i) + b_i(y - y_i) + c_i(z - z_i)]^2\right]
+   :label: eq_w_optimize
+
+To seek the solution, we take partial derivative of equation :eq:`eq_w_optimize` and set it to zero.
+
+
+.. math:: \frac{\partial E(x,y,z)}{\partial x} = \sum_{i=1}^N \alpha_i \left[{2(x - x_i) - 2a_i\{a_i(x - x_i) + b_i(y - y_i) + c_i(z - z_i)\}}\right]=0
+   :label: eq_w_optimize_part_1
+
+.. math:: \frac{\partial E(x,y,z)}{\partial y} = \sum_{i=1}^N \alpha_i \left[{2(y - y_i) - 2b_i\{a_i(x - x_i) + b_i(y - y_i) + c_i(z - z_i)\}}\right]=0
+   :label: eq_w_optimize_part_2
+
+.. math:: \frac{\partial E(x,y,z)}{\partial z} = \sum_{i=1}^N \alpha_i \left[{2(z - z_i) - 2c_i\{a_i(x - x_i) + b_i(y - y_i) + c_i(z - z_i)\}}\right]=0
+   :label: eq_w_optimize_part_3
+
+Expanding the terms and dividing by :math:`2` we get:
+
+
+.. math:: \sum_{i=1}^N \alpha_i \left[x - x_i - a_i^2 x + a_i^2 x_i - a_i b_i y + a_i b_i y_i - a_i c_i z + a_i c_i z_i\right]=0
+   :label: eq_w_optimize_part_11
+
+.. math:: \sum_{i=1}^N \alpha_i \left[y - y_i - a_i b_i x + a_i b_i x_i  - b_i^2 y + b_i^2 y_i - b_i c_i z + b_i c_i z_i\right]=0
+   :label: eq_w_optimize_part_12
+
+.. math:: \sum_{i=1}^N \alpha_i \left[z - z_i - a_i c_i x + a_i c_i x_i - b_i c_i y + b_i c_i y_i - c_i^2 z + c_i^2 z_i\right]=0
+   :label: eq_w_optimize_part_13
+
+We will rearrange elements so that we can get into matrix form:
+
+
+.. math:: \sum_{i=1}^N \alpha_i \left[(1- a_i^2)x - a_i b_i y - a_i c_i z\right]=\sum_{i=1}^N \alpha_i \left[(1- a_i^2)x_i - a_i b_i y_i - a_i c_i z_i \right]
+   :label: eq_w_optimize_part_21
+
+.. math:: \sum_{i=1}^N \alpha_i \left[- a_i b_i x + (1- b_i^2)y - b_i c_i z\right] = \sum_{i=1}^N \alpha_i \left[- a_i b_i x_i + (1- b_i^2)y_i - b_i c_i z_i \right]
+   :label: eq_w_optimize_part_22
+
+.. math:: \sum_{i=1}^N \alpha_i \left[- a_i c_i x - b_i c_i y + (1- c_i^2)z\right] = \sum_{i=1}^N \alpha_i \left[- a_i c_i x_i - b_i c_i y_i + (1- c_i^2)z_i \right]
+   :label: eq_w_optimize_part_23
+
+Now we can write this system of linear equations in matrix form:
+
+.. math:: \begin{bmatrix}\sum_i \alpha_i{(1-a_i^2)} & -\sum_i \alpha_i{a_i b_i} & -\sum_i \alpha_i{a_i c_i} \\-\sum_i \alpha_i{a_i b_i} & \sum_i \alpha_i{(1-b_i^2)} & -\sum_i \alpha_i{b_i c_i} \\ -\sum_i \alpha_i{a_i c_i} & -\sum_i \alpha_i{b_i c_i} & \sum_i \alpha_i{(1-c_i^2)}\end{bmatrix} \begin{bmatrix} x \\ y \\ z \end{bmatrix} = \begin{bmatrix} \sum_i \alpha_i \left[(1- a_i^2)x_i - a_i b_i y_i - a_i c_i z_i \right] \\ \sum_i \alpha_i \left[- a_i b_i x_i + (1- b_i^2)y_i - b_i c_i z_i \right] \\ \sum_i \alpha_i \left[- a_i c_i x_i - b_i c_i y_i + (1- c_i^2)z_i \right] \end{bmatrix}
+   :label: eq_w_optimize_matrix
+
+This new for helps us to prioritize rays based on user location.
+
+References
+==========
+
+.. [Slabaugh2001] Optimal Ray Intersection For Computing 3D Points From N -View Correspondences.
+.. [GoogleTango] https://developers.google.com/tango/overview/area-learning
+
+
+

@@ -1,0 +1,412 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>1   Abstract &#8212; Drift Correction for Augmented Reality 1 documentation</title>
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href=".static/dist_material/css/bootstrap-material-design.css" type="text/css" />
+    <link rel="stylesheet" href=".static/dist_material/css/ripples.min.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#"><span><img src="_static/logo.png"></span>
+          Drift Correction</a>
+        <span class="navbar-text navbar-version pull-left"><b>1</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">1&nbsp;&nbsp;&nbsp;Abstract</a></li>
+<li><a class="reference internal" href="#proposed-solution">2&nbsp;&nbsp;&nbsp;Proposed Solution</a><ul>
+<li><a class="reference internal" href="#the-problem">2.1&nbsp;&nbsp;&nbsp;The Problem</a></li>
+<li><a class="reference internal" href="#area-learning">2.2&nbsp;&nbsp;&nbsp;Area Learning</a></li>
+<li><a class="reference internal" href="#n-ray-based-correction-estimates-for-drift-correction">2.3&nbsp;&nbsp;&nbsp;N-ray based correction estimates for Drift Correction</a><ul>
+<li><a class="reference internal" href="#id2">2.3.1&nbsp;&nbsp;&nbsp;Area Learning</a></li>
+<li><a class="reference internal" href="#initial-n-ray-collection-by-detecting-marker">2.3.2&nbsp;&nbsp;&nbsp;Initial N-ray collection by detecting marker</a></li>
+<li><a class="reference internal" href="#estimate-3d-position-using-n-rays">2.3.3&nbsp;&nbsp;&nbsp;Estimate 3D position using N-rays</a></li>
+<li><a class="reference internal" href="#weighted-estimate-of-position">2.3.4&nbsp;&nbsp;&nbsp;Weighted estimate of position</a></li>
+<li><a class="reference internal" href="#pose-estimate">2.3.5&nbsp;&nbsp;&nbsp;Pose Estimate</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#derivations">3&nbsp;&nbsp;&nbsp;Derivations</a><ul>
+<li><a class="reference internal" href="#finding-the-shortest-distance-between-a-point-and-a-ray">3.1&nbsp;&nbsp;&nbsp;Finding the shortest distance between a point and a ray</a></li>
+<li><a class="reference internal" href="#formulating-problem-as-optimization-problem">3.2&nbsp;&nbsp;&nbsp;Formulating problem as optimization problem</a></li>
+<li><a class="reference internal" href="#formulating-problem-for-weighted-estimation">3.3&nbsp;&nbsp;&nbsp;Formulating problem for weighted estimation</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#references">4&nbsp;&nbsp;&nbsp;References</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="_sources/index.rst.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">1&nbsp;&nbsp;&nbsp;Abstract</a></li>
+<li><a class="reference internal" href="#proposed-solution">2&nbsp;&nbsp;&nbsp;Proposed Solution</a><ul>
+<li><a class="reference internal" href="#the-problem">2.1&nbsp;&nbsp;&nbsp;The Problem</a></li>
+<li><a class="reference internal" href="#area-learning">2.2&nbsp;&nbsp;&nbsp;Area Learning</a></li>
+<li><a class="reference internal" href="#n-ray-based-correction-estimates-for-drift-correction">2.3&nbsp;&nbsp;&nbsp;N-ray based correction estimates for Drift Correction</a><ul>
+<li><a class="reference internal" href="#id2">2.3.1&nbsp;&nbsp;&nbsp;Area Learning</a></li>
+<li><a class="reference internal" href="#initial-n-ray-collection-by-detecting-marker">2.3.2&nbsp;&nbsp;&nbsp;Initial N-ray collection by detecting marker</a></li>
+<li><a class="reference internal" href="#estimate-3d-position-using-n-rays">2.3.3&nbsp;&nbsp;&nbsp;Estimate 3D position using N-rays</a></li>
+<li><a class="reference internal" href="#weighted-estimate-of-position">2.3.4&nbsp;&nbsp;&nbsp;Weighted estimate of position</a></li>
+<li><a class="reference internal" href="#pose-estimate">2.3.5&nbsp;&nbsp;&nbsp;Pose Estimate</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#derivations">3&nbsp;&nbsp;&nbsp;Derivations</a><ul>
+<li><a class="reference internal" href="#finding-the-shortest-distance-between-a-point-and-a-ray">3.1&nbsp;&nbsp;&nbsp;Finding the shortest distance between a point and a ray</a></li>
+<li><a class="reference internal" href="#formulating-problem-as-optimization-problem">3.2&nbsp;&nbsp;&nbsp;Formulating problem as optimization problem</a></li>
+<li><a class="reference internal" href="#formulating-problem-for-weighted-estimation">3.3&nbsp;&nbsp;&nbsp;Formulating problem for weighted estimation</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#references">4&nbsp;&nbsp;&nbsp;References</a></li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="toctree-wrapper compound">
+</div>
+<div class="section" id="abstract">
+<h1>1&nbsp;&nbsp;&nbsp;Abstract<a class="headerlink" href="#abstract" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="proposed-solution">
+<h1>2&nbsp;&nbsp;&nbsp;Proposed Solution<a class="headerlink" href="#proposed-solution" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="the-problem">
+<h2>2.1&nbsp;&nbsp;&nbsp;The Problem<a class="headerlink" href="#the-problem" title="Permalink to this headline">¶</a></h2>
+<p>Drift correction problem is well known when it comes to Simultaneous
+Locomotion And Localization (SLAM). This problem also occurs when it comes to
+AR devices and software like Tango, HoloLens, and Vuforia as they use some
+form of SLAM internally to do head tracking. When you position a marker in a
+3D world and are simultaneously building a map of surroundings as
+in “Extended Tracking” the marker tends to drift over time.</p>
+<div class="figure align-center" id="id4">
+<a class="reference internal image-reference" href="_images/Drift_Correction.png"><img alt="figure that explains drift correction" src="_images/Drift_Correction.png" style="width: 500.0px; height: 250.0px;" /></a>
+<p class="caption"><span class="caption-text">Estimated trajectory drifts over time <a class="reference internal" href="#googletango" id="id1">[GoogleTango]</a>.</span></p>
+</div>
+</div>
+<div class="section" id="area-learning">
+<h2>2.2&nbsp;&nbsp;&nbsp;Area Learning<a class="headerlink" href="#area-learning" title="Permalink to this headline">¶</a></h2>
+<p>To overcome and make sure that the holograms are placed in the exact location
+the approach taken by HoloLens and Google Tango API is to learn an area. That
+is can they try to remember the location of the hologram and updates the
+position of the hologram as and when the area is observed again. In the case of
+Vuforia, it takes an ImageTarget and performs extended tracking and tracks
+image marker as world reference.</p>
+<p>There are some limitations with these approaches:</p>
+<ul class="simple">
+<li>Over far distance, we cannot guarantee that the holograms will not drift</li>
+<li>Detection overhead</li>
+<li>Failure in outdoor environment setup</li>
+</ul>
+</div>
+<div class="section" id="n-ray-based-correction-estimates-for-drift-correction">
+<h2>2.3&nbsp;&nbsp;&nbsp;N-ray based correction estimates for Drift Correction<a class="headerlink" href="#n-ray-based-correction-estimates-for-drift-correction" title="Permalink to this headline">¶</a></h2>
+<p>Our approach to come up with drift correction estimates is made up of multiple
+steps as will be discussed below. The details are with respect to HoloLens.</p>
+<div class="section" id="id2">
+<h3>2.3.1&nbsp;&nbsp;&nbsp;Area Learning<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>We use the area learning offered by Microsoft. This is done by initially
+detecting the marker and adding a spatial anchor at its place. This alone
+is good enough to get the marker estimates when we are near the marker.
+But in scenarios where the walking area is large and in outdoor setup,
+the hologram positioning is not reliable and custom detection and correction
+is required which will be explained in next steps.</p>
+</div>
+<div class="section" id="initial-n-ray-collection-by-detecting-marker">
+<h3>2.3.2&nbsp;&nbsp;&nbsp;Initial N-ray collection by detecting marker<a class="headerlink" href="#initial-n-ray-collection-by-detecting-marker" title="Permalink to this headline">¶</a></h3>
+<p>We make the user move around the marker and collect multiple n-viewports rays.
+Note that we do not use the 3D position of the marker but the ray between user
+head position and marker position. This helps us overcome depth accuracy issues.</p>
+<p>These n-rays are generally detected using marker detection and hence have no
+offset. Whereas the spatial anchors that we placed initially in section
+Area Learning clearly show the drifted position for the marker.</p>
+</div>
+<div class="section" id="estimate-3d-position-using-n-rays">
+<h3>2.3.3&nbsp;&nbsp;&nbsp;Estimate 3D position using N-rays<a class="headerlink" href="#estimate-3d-position-using-n-rays" title="Permalink to this headline">¶</a></h3>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This is partially implemented.</p>
+</div>
+<p>We use QR-solver to estimate the position of the marker using all the n-rays.
+Generally, we use around forty rays collected from all directions around the
+marker. Once the marker position is estimated we can switch off tracking
+or reduce the tracking rate of the marker. Ideally, it is a good idea to keep
+track of marker so that we keep collecting new rays pointing towards marker
+and delete old rays. This just helps us to be in sync with map updates that
+are happening inside HoloLens.</p>
+<p>Note that the QR solver runs on every frame. To keep the computational cost
+low we use special formulation of our problem rather than solving the system
+of linear equations for all rays. So the computational cost is linear to the
+number of rays being used by our system.</p>
+<div class="figure align-center" id="id5">
+<a class="reference internal image-reference" href="_images/nrays_and_marker.png"><img alt="figure Estimate 3D position using N-rays." src="_images/nrays_and_marker.png" style="width: 544.0px; height: 351.5px;" /></a>
+<p class="caption"><span class="caption-text">Estimate 3D position using N-rays.</span></p>
+</div>
+</div>
+<div class="section" id="weighted-estimate-of-position">
+<h3>2.3.4&nbsp;&nbsp;&nbsp;Weighted estimate of position<a class="headerlink" href="#weighted-estimate-of-position" title="Permalink to this headline">¶</a></h3>
+<div class="admonition-todo admonition" id="index-0">
+<p class="first admonition-title">Todo</p>
+<p class="last">This is not yet implemented</p>
+</div>
+<p>In order to further improve the 3D estimate of marker we update the marker
+position with the rays that are near the HoloLens with higher weightage.
+This is shown in below figure, where you can see that the green rays get more
+importance.</p>
+<div class="figure align-center" id="id6">
+<a class="reference internal image-reference" href="_images/nrays_and_marker_weighted.png"><img alt="figure Weighted Estimate 3D position using N-rays." src="_images/nrays_and_marker_weighted.png" style="width: 544.0px; height: 393.5px;" /></a>
+<p class="caption"><span class="caption-text">Weighted Estimate 3D position using N-rays.</span></p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This helps us ensure that the hologram places is correct with respect to
+user perspective.</p>
+</div>
+</div>
+<div class="section" id="pose-estimate">
+<h3>2.3.5&nbsp;&nbsp;&nbsp;Pose Estimate<a class="headerlink" href="#pose-estimate" title="Permalink to this headline">¶</a></h3>
+<div class="admonition-todo admonition" id="index-1">
+<p class="first admonition-title">Todo</p>
+<p class="last">This is not yet implemented</p>
+</div>
+<p>The earlier discussion shows how we estimate position of marker. But using
+custom marker detection we cannot get reliable estimates of pose as we move
+far away. Hence, we use three markers to get the pose of the Golf green data
+correct. This is shown in below figure.</p>
+<div class="figure align-center" id="id7">
+<a class="reference internal image-reference" href="_images/pose_estimation.png"><img alt="figure Pose Estimation." src="_images/pose_estimation.png" style="width: 639.0px; height: 353.0px;" /></a>
+<p class="caption"><span class="caption-text">Pose Estimation.</span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="derivations">
+<h1>3&nbsp;&nbsp;&nbsp;Derivations<a class="headerlink" href="#derivations" title="Permalink to this headline">¶</a></h1>
+<p>In this section we will derive equation related to estimating 3D position of
+marker based on rays collected from multiple viewports.</p>
+<div class="section" id="finding-the-shortest-distance-between-a-point-and-a-ray">
+<h2>3.1&nbsp;&nbsp;&nbsp;Finding the shortest distance between a point and a ray<a class="headerlink" href="#finding-the-shortest-distance-between-a-point-and-a-ray" title="Permalink to this headline">¶</a></h2>
+<p>Our goal here is find the distance between point <span class="math">\(P\)</span> and ray
+<span class="math">\(\overrightarrow{\ell}\)</span>.</p>
+<div class="figure align-center" id="id8">
+<a class="reference internal image-reference" href="_images/dist_between_ray_and_point.png"><img alt="figure Finding the shortest distance between a point and a ray." src="_images/dist_between_ray_and_point.png" style="width: 564.0px; height: 232.0px;" /></a>
+<p class="caption"><span class="caption-text">Finding the shortest distance between a point and a ray. <a class="reference internal" href="#slabaugh2001" id="id3">[Slabaugh2001]</a></span></p>
+</div>
+<p>We can easily exploit pythagoras theorem to find the distance as in below
+equation.</p>
+<div class="math" id="equation-eq_pyth">
+<span class="eqno">(1)<a class="headerlink" href="#equation-eq_pyth" title="Permalink to this equation">¶</a></span>\[{\parallel RP \parallel}^2 = {\parallel QP \parallel}^2 - {\parallel QR \parallel}^2\]</div>
+<p>Thus the distance we are interested in is given by <span class="math">\({\parallel RP \parallel}\)</span>.</p>
+<div class="math" id="equation-eq_pyth_dist">
+<span class="eqno">(2)<a class="headerlink" href="#equation-eq_pyth_dist" title="Permalink to this equation">¶</a></span>\[{\parallel RP \parallel} = \sqrt{(x - x_1)^2 + (y - y_1)^2 + (z - z_1)^2 - [a_1(x - x_1) + b_1(y - y_1) + c_1(z - z_1)]^2}\]</div>
+<p>Now when we have <span class="math">\(N\)</span> rays the sum of all distances from point <span class="math">\(P\)</span> to all rays is given by:</p>
+<div class="math" id="equation-eq_pyth_dist_sum">
+<span class="eqno">(3)<a class="headerlink" href="#equation-eq_pyth_dist_sum" title="Permalink to this equation">¶</a></span>\[D(x,y,z) = \sum_{i=1}^N { \sqrt{(x - x_i)^2 + (y - y_i)^2 + (z - z_i)^2 - [a_i(x - x_i) + b_i(y - y_i) + c_i(z - z_i)]^2} }\]</div>
+</div>
+<div class="section" id="formulating-problem-as-optimization-problem">
+<h2>3.2&nbsp;&nbsp;&nbsp;Formulating problem as optimization problem<a class="headerlink" href="#formulating-problem-as-optimization-problem" title="Permalink to this headline">¶</a></h2>
+<p>Here we make strong assumption that the point that is close to all rays is the
+3D position of the marker. That means that we want to minimize the distance in
+equation <a class="reference internal" href="#equation-eq_pyth_dist_sum">(3)</a>.</p>
+<p>Equation <a class="reference internal" href="#equation-eq_pyth_dist_sum">(3)</a> has a square root which makes the solution non-linear.
+Hense we instead try to optimize sum of squared distance.</p>
+<div class="math" id="equation-eq_optimize">
+<span class="eqno">(4)<a class="headerlink" href="#equation-eq_optimize" title="Permalink to this equation">¶</a></span>\[E(x,y,z) = \sum_{i=1}^N \left[(x - x_i)^2 + (y - y_i)^2 + (z - z_i)^2 - [a_i(x - x_i) + b_i(y - y_i) + c_i(z - z_i)]^2\right]\]</div>
+<p>To seek the solution, we take partial derivative of equation <a class="reference internal" href="#equation-eq_optimize">(4)</a> and set it to zero.</p>
+<div class="math" id="equation-eq_optimize_part_1">
+<span class="eqno">(5)<a class="headerlink" href="#equation-eq_optimize_part_1" title="Permalink to this equation">¶</a></span>\[\frac{\partial E(x,y,z)}{\partial x} = \sum_{i=1}^N \left[{2(x - x_i) - 2a_i\{a_i(x - x_i) + b_i(y - y_i) + c_i(z - z_i)\}}\right]=0\]</div>
+<div class="math" id="equation-eq_optimize_part_2">
+<span class="eqno">(6)<a class="headerlink" href="#equation-eq_optimize_part_2" title="Permalink to this equation">¶</a></span>\[\frac{\partial E(x,y,z)}{\partial y} = \sum_{i=1}^N \left[{2(y - y_i) - 2b_i\{a_i(x - x_i) + b_i(y - y_i) + c_i(z - z_i)\}}\right]=0\]</div>
+<div class="math" id="equation-eq_optimize_part_3">
+<span class="eqno">(7)<a class="headerlink" href="#equation-eq_optimize_part_3" title="Permalink to this equation">¶</a></span>\[\frac{\partial E(x,y,z)}{\partial z} = \sum_{i=1}^N \left[{2(z - z_i) - 2c_i\{a_i(x - x_i) + b_i(y - y_i) + c_i(z - z_i)\}}\right]=0\]</div>
+<p>Expanding the terms and dividing by <span class="math">\(2\)</span> we get:</p>
+<div class="math" id="equation-eq_optimize_part_11">
+<span class="eqno">(8)<a class="headerlink" href="#equation-eq_optimize_part_11" title="Permalink to this equation">¶</a></span>\[\sum_{i=1}^N \left[x - x_i - a_i^2 x + a_i^2 x_i - a_i b_i y + a_i b_i y_i - a_i c_i z + a_i c_i z_i\right]=0\]</div>
+<div class="math" id="equation-eq_optimize_part_12">
+<span class="eqno">(9)<a class="headerlink" href="#equation-eq_optimize_part_12" title="Permalink to this equation">¶</a></span>\[\sum_{i=1}^N \left[y - y_i - a_i b_i x + a_i b_i x_i  - b_i^2 y + b_i^2 y_i - b_i c_i z + b_i c_i z_i\right]=0\]</div>
+<div class="math" id="equation-eq_optimize_part_13">
+<span class="eqno">(10)<a class="headerlink" href="#equation-eq_optimize_part_13" title="Permalink to this equation">¶</a></span>\[\sum_{i=1}^N \left[z - z_i - a_i c_i x + a_i c_i x_i - b_i c_i y + b_i c_i y_i - c_i^2 z + c_i^2 z_i\right]=0\]</div>
+<p>We will rearrange elements so that we can get into matrix form:</p>
+<div class="math" id="equation-eq_optimize_part_21">
+<span class="eqno">(11)<a class="headerlink" href="#equation-eq_optimize_part_21" title="Permalink to this equation">¶</a></span>\[\sum_{i=1}^N \left[(1- a_i^2)x - a_i b_i y - a_i c_i z\right]=\sum_{i=1}^N \left[(1- a_i^2)x_i - a_i b_i y_i - a_i c_i z_i \right]\]</div>
+<div class="math" id="equation-eq_optimize_part_22">
+<span class="eqno">(12)<a class="headerlink" href="#equation-eq_optimize_part_22" title="Permalink to this equation">¶</a></span>\[\sum_{i=1}^N \left[- a_i b_i x + (1- b_i^2)y - b_i c_i z\right] = \sum_{i=1}^N \left[- a_i b_i x_i + (1- b_i^2)y_i - b_i c_i z_i \right]\]</div>
+<div class="math" id="equation-eq_optimize_part_23">
+<span class="eqno">(13)<a class="headerlink" href="#equation-eq_optimize_part_23" title="Permalink to this equation">¶</a></span>\[\sum_{i=1}^N \left[- a_i c_i x - b_i c_i y + (1- c_i^2)z\right] = \sum_{i=1}^N \left[- a_i c_i x_i - b_i c_i y_i + (1- c_i^2)z_i \right]\]</div>
+<p>Now we can write this system of linear equations in matrix form:</p>
+<div class="math" id="equation-eq_optimize_matrix">
+<span class="eqno">(14)<a class="headerlink" href="#equation-eq_optimize_matrix" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{bmatrix}\sum_i{(1-a_i^2)} &amp; -\sum_i{a_i b_i} &amp; -\sum_i{a_i c_i} \\-\sum_i{a_i b_i} &amp; \sum_i{(1-b_i^2)} &amp; -\sum_i{b_i c_i} \\ -\sum_i{a_i c_i} &amp; -\sum_i{b_i c_i} &amp; \sum_i{(1-c_i^2)}\end{bmatrix} \begin{bmatrix} x \\ y \\ z \end{bmatrix} = \begin{bmatrix} \sum_i \left[(1- a_i^2)x_i - a_i b_i y_i - a_i c_i z_i \right] \\ \sum_i \left[- a_i b_i x_i + (1- b_i^2)y_i - b_i c_i z_i \right] \\ \sum_i \left[- a_i c_i x_i - b_i c_i y_i + (1- c_i^2)z_i \right] \end{bmatrix}\end{split}\]</div>
+</div>
+<div class="section" id="formulating-problem-for-weighted-estimation">
+<h2>3.3&nbsp;&nbsp;&nbsp;Formulating problem for weighted estimation<a class="headerlink" href="#formulating-problem-for-weighted-estimation" title="Permalink to this headline">¶</a></h2>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This is the derivation with weighted importance and to extend the above mentioned work.</p>
+</div>
+<p>In equation <a class="reference internal" href="#equation-eq_optimize">(4)</a> we that all rays are equally important. For our problem we plan to have weighted importance for each ray based on user location in 3D world.
+We can now redefine our optimization problem as below, where <span class="math">\(\alpha_i\)</span> is the weight corresponding to ray <span class="math">\(\overrightarrow{\ell_i}\)</span>.</p>
+<div class="math" id="equation-eq_w_optimize">
+<span class="eqno">(15)<a class="headerlink" href="#equation-eq_w_optimize" title="Permalink to this equation">¶</a></span>\[E(x,y,z) = \sum_{i=1}^N \alpha_i \left[(x - x_i)^2 + (y - y_i)^2 + (z - z_i)^2 - [a_i(x - x_i) + b_i(y - y_i) + c_i(z - z_i)]^2\right]\]</div>
+<p>To seek the solution, we take partial derivative of equation <a class="reference internal" href="#equation-eq_w_optimize">(15)</a> and set it to zero.</p>
+<div class="math" id="equation-eq_w_optimize_part_1">
+<span class="eqno">(16)<a class="headerlink" href="#equation-eq_w_optimize_part_1" title="Permalink to this equation">¶</a></span>\[\frac{\partial E(x,y,z)}{\partial x} = \sum_{i=1}^N \alpha_i \left[{2(x - x_i) - 2a_i\{a_i(x - x_i) + b_i(y - y_i) + c_i(z - z_i)\}}\right]=0\]</div>
+<div class="math" id="equation-eq_w_optimize_part_2">
+<span class="eqno">(17)<a class="headerlink" href="#equation-eq_w_optimize_part_2" title="Permalink to this equation">¶</a></span>\[\frac{\partial E(x,y,z)}{\partial y} = \sum_{i=1}^N \alpha_i \left[{2(y - y_i) - 2b_i\{a_i(x - x_i) + b_i(y - y_i) + c_i(z - z_i)\}}\right]=0\]</div>
+<div class="math" id="equation-eq_w_optimize_part_3">
+<span class="eqno">(18)<a class="headerlink" href="#equation-eq_w_optimize_part_3" title="Permalink to this equation">¶</a></span>\[\frac{\partial E(x,y,z)}{\partial z} = \sum_{i=1}^N \alpha_i \left[{2(z - z_i) - 2c_i\{a_i(x - x_i) + b_i(y - y_i) + c_i(z - z_i)\}}\right]=0\]</div>
+<p>Expanding the terms and dividing by <span class="math">\(2\)</span> we get:</p>
+<div class="math" id="equation-eq_w_optimize_part_11">
+<span class="eqno">(19)<a class="headerlink" href="#equation-eq_w_optimize_part_11" title="Permalink to this equation">¶</a></span>\[\sum_{i=1}^N \alpha_i \left[x - x_i - a_i^2 x + a_i^2 x_i - a_i b_i y + a_i b_i y_i - a_i c_i z + a_i c_i z_i\right]=0\]</div>
+<div class="math" id="equation-eq_w_optimize_part_12">
+<span class="eqno">(20)<a class="headerlink" href="#equation-eq_w_optimize_part_12" title="Permalink to this equation">¶</a></span>\[\sum_{i=1}^N \alpha_i \left[y - y_i - a_i b_i x + a_i b_i x_i  - b_i^2 y + b_i^2 y_i - b_i c_i z + b_i c_i z_i\right]=0\]</div>
+<div class="math" id="equation-eq_w_optimize_part_13">
+<span class="eqno">(21)<a class="headerlink" href="#equation-eq_w_optimize_part_13" title="Permalink to this equation">¶</a></span>\[\sum_{i=1}^N \alpha_i \left[z - z_i - a_i c_i x + a_i c_i x_i - b_i c_i y + b_i c_i y_i - c_i^2 z + c_i^2 z_i\right]=0\]</div>
+<p>We will rearrange elements so that we can get into matrix form:</p>
+<div class="math" id="equation-eq_w_optimize_part_21">
+<span class="eqno">(22)<a class="headerlink" href="#equation-eq_w_optimize_part_21" title="Permalink to this equation">¶</a></span>\[\sum_{i=1}^N \alpha_i \left[(1- a_i^2)x - a_i b_i y - a_i c_i z\right]=\sum_{i=1}^N \alpha_i \left[(1- a_i^2)x_i - a_i b_i y_i - a_i c_i z_i \right]\]</div>
+<div class="math" id="equation-eq_w_optimize_part_22">
+<span class="eqno">(23)<a class="headerlink" href="#equation-eq_w_optimize_part_22" title="Permalink to this equation">¶</a></span>\[\sum_{i=1}^N \alpha_i \left[- a_i b_i x + (1- b_i^2)y - b_i c_i z\right] = \sum_{i=1}^N \alpha_i \left[- a_i b_i x_i + (1- b_i^2)y_i - b_i c_i z_i \right]\]</div>
+<div class="math" id="equation-eq_w_optimize_part_23">
+<span class="eqno">(24)<a class="headerlink" href="#equation-eq_w_optimize_part_23" title="Permalink to this equation">¶</a></span>\[\sum_{i=1}^N \alpha_i \left[- a_i c_i x - b_i c_i y + (1- c_i^2)z\right] = \sum_{i=1}^N \alpha_i \left[- a_i c_i x_i - b_i c_i y_i + (1- c_i^2)z_i \right]\]</div>
+<p>Now we can write this system of linear equations in matrix form:</p>
+<div class="math" id="equation-eq_w_optimize_matrix">
+<span class="eqno">(25)<a class="headerlink" href="#equation-eq_w_optimize_matrix" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{bmatrix}\sum_i \alpha_i{(1-a_i^2)} &amp; -\sum_i \alpha_i{a_i b_i} &amp; -\sum_i \alpha_i{a_i c_i} \\-\sum_i \alpha_i{a_i b_i} &amp; \sum_i \alpha_i{(1-b_i^2)} &amp; -\sum_i \alpha_i{b_i c_i} \\ -\sum_i \alpha_i{a_i c_i} &amp; -\sum_i \alpha_i{b_i c_i} &amp; \sum_i \alpha_i{(1-c_i^2)}\end{bmatrix} \begin{bmatrix} x \\ y \\ z \end{bmatrix} = \begin{bmatrix} \sum_i \alpha_i \left[(1- a_i^2)x_i - a_i b_i y_i - a_i c_i z_i \right] \\ \sum_i \alpha_i \left[- a_i b_i x_i + (1- b_i^2)y_i - b_i c_i z_i \right] \\ \sum_i \alpha_i \left[- a_i c_i x_i - b_i c_i y_i + (1- c_i^2)z_i \right] \end{bmatrix}\end{split}\]</div>
+<p>This new for helps us to prioritize rays based on user location.</p>
+</div>
+</div>
+<div class="section" id="references">
+<h1>4&nbsp;&nbsp;&nbsp;References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h1>
+<table class="docutils citation" frame="void" id="slabaugh2001" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id3">[Slabaugh2001]</a></td><td>Optimal Ray Intersection For Computing 3D Points From N -View Correspondences.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="googletango" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[GoogleTango]</a></td><td><a class="reference external" href="https://developers.google.com/tango/overview/area-learning">https://developers.google.com/tango/overview/area-learning</a></td></tr>
+</tbody>
+</table>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+  <!--<h2>My footer of awesomeness.</h2>-->
+  
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2017, Praveen Baburao Kulkarni.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.<br/>
+    </p>
+  </div>
+</footer>
+
+  </body>
+</html>
